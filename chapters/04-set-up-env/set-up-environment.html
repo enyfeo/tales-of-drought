@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee12de98" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="The Climate Data Store or any other data source" href="../03-get-data/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../../_static/logo-no-bg.png" class="logo__image only-light" alt="Tales of Dry Lands - Home"/>
-    <script>document.write(`<img src="../../_static/logo-no-bg.png" class="logo__image only-dark" alt="Tales of Dry Lands - Home"/>`);</script>
+    <img src="../../_static/logo-no-bg.png" class="logo__image only-dark pst-js-only" alt="Tales of Dry Lands - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -205,7 +194,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-time-machine.html">The Time Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-focus-madagascar.html">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -230,9 +218,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -276,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook" target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook/issues/new?title=Issue%20on%20page%20%2Fchapters/04-set-up-env/set-up-environment.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/issues/new?title=Issue%20on%20page%20%2Fchapters/04-set-up-env/set-up-environment.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -376,25 +369,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -480,202 +465,232 @@ We use <code class="docutils literal notranslate"><span class="pre">!pip</span> 
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ipywidgets
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pyprojroot
 <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>ipywidgets
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>scipy
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>hvplot
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /home/george/drought-311-venv/lib64/python3.11/site-packages (1.26.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (2.4.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /home/george/drought-311-venv/lib64/python3.11/site-packages (2.2.2)
-Requirement already satisfied: numpy&gt;=1.23.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas) (1.26.4)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas) (2024.1)
-Requirement already satisfied: six&gt;=1.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (3.0.1)
+Requirement already satisfied: numpy&gt;=1.26.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pandas) (2.4.3)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: geopandas in /home/george/drought-311-venv/lib64/python3.11/site-packages (0.14.4)
-Requirement already satisfied: fiona&gt;=1.8.21 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (1.9.6)
-Requirement already satisfied: numpy&gt;=1.22 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (1.26.4)
-Requirement already satisfied: packaging in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (24.0)
-Requirement already satisfied: pandas&gt;=1.4.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (2.2.2)
-Requirement already satisfied: pyproj&gt;=3.3.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (3.6.1)
-Requirement already satisfied: shapely&gt;=1.8.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from geopandas) (2.0.4)
-Requirement already satisfied: attrs&gt;=19.2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (23.2.0)
-Requirement already satisfied: certifi in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (2024.2.2)
-Requirement already satisfied: click~=8.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (8.1.7)
-Requirement already satisfied: click-plugins&gt;=1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (1.1.1)
-Requirement already satisfied: cligj&gt;=0.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (0.7.2)
-Requirement already satisfied: six in /home/george/drought-311-venv/lib64/python3.11/site-packages (from fiona&gt;=1.8.21-&gt;geopandas) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: geopandas in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (1.1.3)
+Requirement already satisfied: numpy&gt;=1.24 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (2.4.3)
+Requirement already satisfied: pyogrio&gt;=0.7.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (0.12.1)
+Requirement already satisfied: packaging in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (26.0)
+Requirement already satisfied: pandas&gt;=2.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (3.0.1)
+Requirement already satisfied: pyproj&gt;=3.5.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (3.7.2)
+Requirement already satisfied: shapely&gt;=2.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from geopandas) (2.1.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;geopandas) (2.9.0.post0)
+Requirement already satisfied: certifi in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pyogrio&gt;=0.7.2-&gt;geopandas) (2026.2.25)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.0.0-&gt;geopandas) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.4.0-&gt;geopandas) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.4.0-&gt;geopandas) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.4.0-&gt;geopandas) (2024.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: xarray in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (2026.2.0)
+Requirement already satisfied: numpy&gt;=1.26 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from xarray) (2.4.3)
+Requirement already satisfied: packaging&gt;=24.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from xarray) (26.0)
+Requirement already satisfied: pandas&gt;=2.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from xarray) (3.0.1)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pandas&gt;=2.2-&gt;xarray) (2.9.0.post0)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.2-&gt;xarray) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: xarray in /home/george/drought-311-venv/lib64/python3.11/site-packages (2024.7.0)
-Requirement already satisfied: numpy&gt;=1.23 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from xarray) (1.26.4)
-Requirement already satisfied: packaging&gt;=23.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from xarray) (24.0)
-Requirement already satisfied: pandas&gt;=2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from xarray) (2.2.2)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=2.0-&gt;xarray) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=2.0-&gt;xarray) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=2.0-&gt;xarray) (2024.1)
-Requirement already satisfied: six&gt;=1.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.0-&gt;xarray) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: netCDF4 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (1.7.4)
+Requirement already satisfied: cftime in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from netCDF4) (1.6.5)
+Requirement already satisfied: certifi in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from netCDF4) (2026.2.25)
+Requirement already satisfied: numpy&gt;=1.21.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from netCDF4) (2.4.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: netCDF4 in /home/george/drought-311-venv/lib64/python3.11/site-packages (1.7.1.post2)
-Requirement already satisfied: cftime in /home/george/drought-311-venv/lib64/python3.11/site-packages (from netCDF4) (1.6.3)
-Requirement already satisfied: certifi in /home/george/drought-311-venv/lib64/python3.11/site-packages (from netCDF4) (2024.2.2)
-Requirement already satisfied: numpy in /home/george/drought-311-venv/lib64/python3.11/site-packages (from netCDF4) (1.26.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dask[complete] in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (2026.1.2)
+Requirement already satisfied: click&gt;=8.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (8.3.0)
+Requirement already satisfied: cloudpickle&gt;=3.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (3.1.2)
+Requirement already satisfied: fsspec&gt;=2021.09.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (2026.2.0)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (26.0)
+Requirement already satisfied: partd&gt;=1.4.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (1.4.2)
+Requirement already satisfied: pyyaml&gt;=5.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (6.0.3)
+Requirement already satisfied: toolz&gt;=0.12.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (1.1.0)
+Requirement already satisfied: pyarrow&gt;=16.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (23.0.1)
+Requirement already satisfied: lz4&gt;=4.3.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (4.4.5)
+Requirement already satisfied: locket in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from partd&gt;=1.4.0-&gt;dask[complete]) (1.0.0)
+Requirement already satisfied: numpy&gt;=1.24 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (2.4.3)
+Requirement already satisfied: pandas&gt;=2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (3.0.1)
+Requirement already satisfied: distributed&lt;2026.1.3,&gt;=2026.1.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (2026.1.2)
+Requirement already satisfied: bokeh&gt;=3.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (3.9.0)
+Requirement already satisfied: jinja2&gt;=2.10.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from dask[complete]) (3.1.6)
+Requirement already satisfied: msgpack&gt;=1.0.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (1.1.2)
+Requirement already satisfied: psutil&gt;=5.8.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (7.2.2)
+Requirement already satisfied: sortedcontainers&gt;=2.0.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (2.4.0)
+Requirement already satisfied: tblib!=3.2.0,!=3.2.1,&gt;=1.6.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (3.2.2)
+Requirement already satisfied: tornado&gt;=6.2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (6.5.5)
+Requirement already satisfied: urllib3&gt;=1.26.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (1.26.20)
+Requirement already satisfied: zict&gt;=3.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from distributed&lt;2026.1.3,&gt;=2026.1.2-&gt;dask[complete]) (3.0.0)
+Requirement already satisfied: contourpy&gt;=1.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1.0-&gt;dask[complete]) (1.3.3)
+Requirement already satisfied: narwhals&gt;=1.13 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1.0-&gt;dask[complete]) (2.18.0)
+Requirement already satisfied: pillow&gt;=7.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1.0-&gt;dask[complete]) (12.1.1)
+Requirement already satisfied: xyzservices&gt;=2021.09.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1.0-&gt;dask[complete]) (2025.11.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from jinja2&gt;=2.10.3-&gt;dask[complete]) (3.0.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dask[complete] in /home/george/drought-311-venv/lib64/python3.11/site-packages (2024.5.1)
-Requirement already satisfied: click&gt;=8.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (8.1.7)
-Requirement already satisfied: cloudpickle&gt;=1.5.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (3.0.0)
-Requirement already satisfied: fsspec&gt;=2021.09.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (2024.5.0)
-Requirement already satisfied: packaging&gt;=20.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (24.0)
-Requirement already satisfied: partd&gt;=1.2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (1.4.2)
-Requirement already satisfied: pyyaml&gt;=5.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (6.0.1)
-Requirement already satisfied: toolz&gt;=0.10.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (0.12.1)
-Requirement already satisfied: importlib-metadata&gt;=4.13.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (7.1.0)
-Requirement already satisfied: pyarrow&gt;=7.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (16.1.0)
-Requirement already satisfied: pyarrow-hotfix in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (0.6)
-Requirement already satisfied: lz4&gt;=4.3.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (4.3.3)
-Requirement already satisfied: zipp&gt;=0.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from importlib-metadata&gt;=4.13.0-&gt;dask[complete]) (3.18.2)
-Requirement already satisfied: locket in /home/george/drought-311-venv/lib64/python3.11/site-packages (from partd&gt;=1.2.0-&gt;dask[complete]) (1.0.0)
-Requirement already satisfied: numpy&gt;=1.16.6 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pyarrow&gt;=7.0-&gt;dask[complete]) (1.26.4)
-Requirement already satisfied: pandas&gt;=1.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (2.2.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pandas&gt;=2.0-&gt;dask[complete]) (2.9.0.post0)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.0-&gt;dask[complete]) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: dask-expr&lt;1.2,&gt;=1.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (1.1.1)
-Requirement already satisfied: bokeh&gt;=2.4.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (3.4.1)
-Requirement already satisfied: jinja2&gt;=2.10.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (3.1.4)
-Requirement already satisfied: distributed==2024.5.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from dask[complete]) (2024.5.1)
-Requirement already satisfied: msgpack&gt;=1.0.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (1.0.8)
-Requirement already satisfied: psutil&gt;=5.7.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (5.9.8)
-Requirement already satisfied: sortedcontainers&gt;=2.0.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (2.4.0)
-Requirement already satisfied: tblib&gt;=1.6.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (3.0.0)
-Requirement already satisfied: tornado&gt;=6.0.4 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (6.4)
-Requirement already satisfied: urllib3&gt;=1.24.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (2.2.1)
-Requirement already satisfied: zict&gt;=3.0.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from distributed==2024.5.1-&gt;dask[complete]) (3.0.0)
-Requirement already satisfied: contourpy&gt;=1.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from bokeh&gt;=2.4.2-&gt;dask[complete]) (1.2.1)
-Requirement already satisfied: pillow&gt;=7.1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from bokeh&gt;=2.4.2-&gt;dask[complete]) (10.3.0)
-Requirement already satisfied: xyzservices&gt;=2021.09.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from bokeh&gt;=2.4.2-&gt;dask[complete]) (2024.4.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from jinja2&gt;=2.10.3-&gt;dask[complete]) (2.1.5)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.3-&gt;dask[complete]) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.3-&gt;dask[complete]) (2024.1)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pandas&gt;=1.3-&gt;dask[complete]) (2024.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (3.10.8)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (1.3.3)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (4.62.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (1.5.0)
+Requirement already satisfied: numpy&gt;=1.23 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (2.4.3)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (26.0)
+Requirement already satisfied: pillow&gt;=8 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (12.1.1)
+Requirement already satisfied: pyparsing&gt;=3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (3.3.2)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=1.3-&gt;dask[complete]) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: plotly in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (6.6.0)
+Requirement already satisfied: narwhals&gt;=1.15.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from plotly) (2.18.0)
+Requirement already satisfied: packaging in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from plotly) (26.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib in /home/george/drought-311-venv/lib64/python3.11/site-packages (3.9.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (1.2.1)
-Requirement already satisfied: cycler&gt;=0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (4.51.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (1.4.5)
-Requirement already satisfied: numpy&gt;=1.23 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (1.26.4)
-Requirement already satisfied: packaging&gt;=20.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (24.0)
-Requirement already satisfied: pillow&gt;=8 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (10.3.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (3.1.2)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib) (2.9.0.post0)
-Requirement already satisfied: six&gt;=1.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kaleido in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (1.2.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: plotly in /home/george/drought-311-venv/lib64/python3.11/site-packages (5.23.0)
-Requirement already satisfied: tenacity&gt;=6.2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from plotly) (9.0.0)
-Requirement already satisfied: packaging in /home/george/drought-311-venv/lib64/python3.11/site-packages (from plotly) (24.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: choreographer&gt;=1.1.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from kaleido) (1.2.1)
+Requirement already satisfied: logistro&gt;=1.0.8 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from kaleido) (2.0.1)
+Requirement already satisfied: orjson&gt;=3.10.15 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from kaleido) (3.11.7)
+Requirement already satisfied: packaging in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from kaleido) (26.0)
+Requirement already satisfied: pytest-timeout&gt;=2.4.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from kaleido) (2.4.0)
+Requirement already satisfied: simplejson&gt;=3.19.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from choreographer&gt;=1.1.1-&gt;kaleido) (3.20.2)
+Requirement already satisfied: pytest&gt;=7.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pytest-timeout&gt;=2.4.0-&gt;kaleido) (9.0.2)
+Requirement already satisfied: iniconfig&gt;=1.0.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pytest&gt;=7.0.0-&gt;pytest-timeout&gt;=2.4.0-&gt;kaleido) (2.3.0)
+Requirement already satisfied: pluggy&lt;2,&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pytest&gt;=7.0.0-&gt;pytest-timeout&gt;=2.4.0-&gt;kaleido) (1.6.0)
+Requirement already satisfied: pygments&gt;=2.7.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pytest&gt;=7.0.0-&gt;pytest-timeout&gt;=2.4.0-&gt;kaleido) (2.19.2)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kaleido in /home/george/drought-311-venv/lib64/python3.11/site-packages (0.2.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: folium in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (0.20.0)
+Requirement already satisfied: branca&gt;=0.6.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from folium) (0.8.2)
+Requirement already satisfied: jinja2&gt;=2.9 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from folium) (3.1.6)
+Requirement already satisfied: numpy in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from folium) (2.4.3)
+Requirement already satisfied: requests in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from folium) (2.32.5)
+Requirement already satisfied: xyzservices in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from folium) (2025.11.0)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from jinja2&gt;=2.9-&gt;folium) (3.0.3)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;folium) (3.4.6)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;folium) (3.11)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;folium) (1.26.20)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;folium) (2026.2.25)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: folium in /home/george/drought-311-venv/lib64/python3.11/site-packages (0.17.0)
-Requirement already satisfied: branca&gt;=0.6.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from folium) (0.7.2)
-Requirement already satisfied: jinja2&gt;=2.9 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from folium) (3.1.4)
-Requirement already satisfied: numpy in /home/george/drought-311-venv/lib64/python3.11/site-packages (from folium) (1.26.4)
-Requirement already satisfied: requests in /home/george/drought-311-venv/lib64/python3.11/site-packages (from folium) (2.31.0)
-Requirement already satisfied: xyzservices in /home/george/drought-311-venv/lib64/python3.11/site-packages (from folium) (2024.4.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from jinja2&gt;=2.9-&gt;folium) (2.1.5)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from requests-&gt;folium) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from requests-&gt;folium) (3.7)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from requests-&gt;folium) (2.2.1)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from requests-&gt;folium) (2024.2.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cartopy in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (0.25.0)
+Requirement already satisfied: numpy&gt;=1.23 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (2.4.3)
+Requirement already satisfied: matplotlib&gt;=3.6 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (3.10.8)
+Requirement already satisfied: shapely&gt;=2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (2.1.2)
+Requirement already satisfied: packaging&gt;=21 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (26.0)
+Requirement already satisfied: pyshp&gt;=2.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (3.0.3)
+Requirement already satisfied: pyproj&gt;=3.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from cartopy) (3.7.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (1.3.3)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (4.62.1)
+Requirement already satisfied: kiwisolver&gt;=1.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (1.5.0)
+Requirement already satisfied: pillow&gt;=8 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (12.1.1)
+Requirement already satisfied: pyparsing&gt;=3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (3.3.2)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from matplotlib&gt;=3.6-&gt;cartopy) (2.9.0.post0)
+Requirement already satisfied: certifi in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pyproj&gt;=3.3.1-&gt;cartopy) (2026.2.25)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.6-&gt;cartopy) (1.17.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cartopy in /home/george/drought-311-venv/lib64/python3.11/site-packages (0.23.0)
-Requirement already satisfied: numpy&gt;=1.21 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (1.26.4)
-Requirement already satisfied: matplotlib&gt;=3.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (3.9.1)
-Requirement already satisfied: shapely&gt;=1.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (2.0.4)
-Requirement already satisfied: packaging&gt;=20 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (24.0)
-Requirement already satisfied: pyshp&gt;=2.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (2.3.1)
-Requirement already satisfied: pyproj&gt;=3.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from cartopy) (3.6.1)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (1.2.1)
-Requirement already satisfied: cycler&gt;=0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (4.51.0)
-Requirement already satisfied: kiwisolver&gt;=1.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (1.4.5)
-Requirement already satisfied: pillow&gt;=8 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (10.3.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (3.1.2)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from matplotlib&gt;=3.5-&gt;cartopy) (2.9.0.post0)
-Requirement already satisfied: certifi in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pyproj&gt;=3.3.1-&gt;cartopy) (2024.2.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (8.1.8)
+Requirement already satisfied: comm&gt;=0.1.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (0.2.3)
+Requirement already satisfied: ipython&gt;=6.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (9.11.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (5.14.3)
+Requirement already satisfied: widgetsnbextension~=4.0.14 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (4.0.15)
+Requirement already satisfied: jupyterlab_widgets~=3.0.15 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (3.0.16)
+Requirement already satisfied: decorator&gt;=5.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers&gt;=1.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (1.1.1)
+Requirement already satisfied: jedi&gt;=0.18.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.19.2)
+Requirement already satisfied: matplotlib-inline&gt;=0.1.6 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.1)
+Requirement already satisfied: pexpect&gt;4.6 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.52)
+Requirement already satisfied: pygments&gt;=2.14.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.19.2)
+Requirement already satisfied: stack_data&gt;=0.6.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
+Requirement already satisfied: wcwidth in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.13)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from jedi&gt;=0.18.2-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.8.6)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pexpect&gt;4.6-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.0)
+Requirement already satisfied: executing&gt;=1.2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.2.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.1)
+Requirement already satisfied: pure-eval in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: six&gt;=1.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from python-dateutil&gt;=2.7-&gt;matplotlib&gt;=3.5-&gt;cartopy) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyprojroot in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (0.3.0)
+Requirement already satisfied: typing-extensions in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pyprojroot) (4.15.0)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets in /home/george/drought-311-venv/lib64/python3.11/site-packages (8.1.2)
-Requirement already satisfied: comm&gt;=0.1.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (0.2.2)
-Requirement already satisfied: ipython&gt;=6.1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (8.18.1)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (5.14.3)
-Requirement already satisfied: widgetsnbextension~=4.0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (4.0.10)
-Requirement already satisfied: jupyterlab-widgets~=3.0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (3.0.10)
-Requirement already satisfied: decorator in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.19.1)
-Requirement already satisfied: matplotlib-inline in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.1.7)
-Requirement already satisfied: prompt-toolkit&lt;3.1.0,&gt;=3.0.41 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.43)
-Requirement already satisfied: pygments&gt;=2.4.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.18.0)
-Requirement already satisfied: stack-data in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
-Requirement already satisfied: pexpect&gt;4.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (8.1.8)
+Requirement already satisfied: comm&gt;=0.1.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (0.2.3)
+Requirement already satisfied: ipython&gt;=6.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (9.11.0)
+Requirement already satisfied: traitlets&gt;=4.3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (5.14.3)
+Requirement already satisfied: widgetsnbextension~=4.0.14 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (4.0.15)
+Requirement already satisfied: jupyterlab_widgets~=3.0.15 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipywidgets) (3.0.16)
+Requirement already satisfied: decorator&gt;=5.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers&gt;=1.0.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (1.1.1)
+Requirement already satisfied: jedi&gt;=0.18.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.19.2)
+Requirement already satisfied: matplotlib-inline&gt;=0.1.6 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.1)
+Requirement already satisfied: pexpect&gt;4.6 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
+Requirement already satisfied: prompt_toolkit&lt;3.1.0,&gt;=3.0.41 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.52)
+Requirement already satisfied: pygments&gt;=2.14.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.19.2)
+Requirement already satisfied: stack_data&gt;=0.6.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
+Requirement already satisfied: wcwidth in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from prompt_toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.13)
+Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.4 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from jedi&gt;=0.18.2-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.8.6)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from pexpect&gt;4.6-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.0)
+Requirement already satisfied: executing&gt;=1.2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.2.1)
+Requirement already satisfied: asttokens&gt;=2.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.1)
+Requirement already satisfied: pure-eval in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from stack_data&gt;=0.6.0-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.8.4)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.0)
-Requirement already satisfied: wcwidth in /home/george/drought-311-venv/lib64/python3.11/site-packages (from prompt-toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.13)
-Requirement already satisfied: executing&gt;=1.2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.0.1)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.4.1)
-Requirement already satisfied: pure-eval in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.2)
-Requirement already satisfied: six&gt;=1.12.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from asttokens&gt;=2.1.0-&gt;stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (1.17.1)
+Requirement already satisfied: numpy&lt;2.7,&gt;=1.26.4 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from scipy) (2.4.3)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyprojroot in /home/george/drought-311-venv/lib64/python3.11/site-packages (0.3.0)
-Requirement already satisfied: typing-extensions in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pyprojroot) (4.11.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipywidgets in /home/george/drought-311-venv/lib64/python3.11/site-packages (8.1.2)
-Requirement already satisfied: comm&gt;=0.1.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (0.2.2)
-Requirement already satisfied: ipython&gt;=6.1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (8.18.1)
-Requirement already satisfied: traitlets&gt;=4.3.1 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (5.14.3)
-Requirement already satisfied: widgetsnbextension~=4.0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (4.0.10)
-Requirement already satisfied: jupyterlab-widgets~=3.0.10 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipywidgets) (3.0.10)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: decorator in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (5.1.1)
-Requirement already satisfied: jedi&gt;=0.16 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.19.1)
-Requirement already satisfied: matplotlib-inline in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.1.7)
-Requirement already satisfied: prompt-toolkit&lt;3.1.0,&gt;=3.0.41 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (3.0.43)
-Requirement already satisfied: pygments&gt;=2.4.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (2.18.0)
-Requirement already satisfied: stack-data in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (0.6.3)
-Requirement already satisfied: pexpect&gt;4.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from ipython&gt;=6.1.0-&gt;ipywidgets) (4.9.0)
-Requirement already satisfied: parso&lt;0.9.0,&gt;=0.8.3 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from jedi&gt;=0.16-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.8.4)
-Requirement already satisfied: ptyprocess&gt;=0.5 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from pexpect&gt;4.3-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.7.0)
-Requirement already satisfied: wcwidth in /home/george/drought-311-venv/lib64/python3.11/site-packages (from prompt-toolkit&lt;3.1.0,&gt;=3.0.41-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.13)
-Requirement already satisfied: executing&gt;=1.2.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.0.1)
-Requirement already satisfied: asttokens&gt;=2.1.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (2.4.1)
-Requirement already satisfied: pure-eval in /home/george/drought-311-venv/lib64/python3.11/site-packages (from stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (0.2.2)
-Requirement already satisfied: six&gt;=1.12.0 in /home/george/drought-311-venv/lib64/python3.11/site-packages (from asttokens&gt;=2.1.0-&gt;stack-data-&gt;ipython&gt;=6.1.0-&gt;ipywidgets) (1.16.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: hvplot in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (0.12.2)
+Requirement already satisfied: bokeh&gt;=3.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (3.9.0)
+Requirement already satisfied: colorcet&gt;=2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (3.1.0)
+Requirement already satisfied: holoviews&gt;=1.19.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (1.22.1)
+Requirement already satisfied: numpy&gt;=1.21 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (2.4.3)
+Requirement already satisfied: packaging in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (26.0)
+Requirement already satisfied: pandas&gt;=1.3 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (3.0.1)
+Requirement already satisfied: panel&gt;=1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (1.8.10)
+Requirement already satisfied: param&lt;3.0,&gt;=1.12.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from hvplot) (2.3.2)
+Requirement already satisfied: Jinja2&gt;=2.9 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (3.1.6)
+Requirement already satisfied: contourpy&gt;=1.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (1.3.3)
+Requirement already satisfied: narwhals&gt;=1.13 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (2.18.0)
+Requirement already satisfied: pillow&gt;=7.1.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (12.1.1)
+Requirement already satisfied: PyYAML&gt;=3.10 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (6.0.3)
+Requirement already satisfied: tornado&gt;=6.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (6.5.5)
+Requirement already satisfied: xyzservices&gt;=2021.09.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bokeh&gt;=3.1-&gt;hvplot) (2025.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from holoviews&gt;=1.19.0-&gt;hvplot) (2.9.0.post0)
+Requirement already satisfied: pyviz-comms&gt;=2.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from holoviews&gt;=1.19.0-&gt;hvplot) (3.0.6)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from Jinja2&gt;=2.9-&gt;bokeh&gt;=3.1-&gt;hvplot) (3.0.3)
+Requirement already satisfied: bleach in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (6.3.0)
+Requirement already satisfied: linkify-it-py in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (2.1.0)
+Requirement already satisfied: markdown in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (3.10.2)
+Requirement already satisfied: markdown-it-py in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (3.0.0)
+Requirement already satisfied: mdit-py-plugins in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (0.5.0)
+Requirement already satisfied: requests in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (2.32.5)
+Requirement already satisfied: tqdm in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (4.67.3)
+Requirement already satisfied: typing-extensions in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from panel&gt;=1.0-&gt;hvplot) (4.15.0)
+Requirement already satisfied: six&gt;=1.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;holoviews&gt;=1.19.0-&gt;hvplot) (1.17.0)
+Requirement already satisfied: webencodings in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from bleach-&gt;panel&gt;=1.0-&gt;hvplot) (0.5.1)
+Requirement already satisfied: uc-micro-py in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from linkify-it-py-&gt;panel&gt;=1.0-&gt;hvplot) (2.0.0)
+Requirement already satisfied: mdurl~=0.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from markdown-it-py-&gt;panel&gt;=1.0-&gt;hvplot) (0.1.2)
+Requirement already satisfied: charset_normalizer&lt;4,&gt;=2 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;panel&gt;=1.0-&gt;hvplot) (3.4.6)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;panel&gt;=1.0-&gt;hvplot) (3.11)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;panel&gt;=1.0-&gt;hvplot) (1.26.20)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (from requests-&gt;panel&gt;=1.0-&gt;hvplot) (2026.2.25)
 </pre></div>
 </div>
 </div>
@@ -688,7 +703,7 @@ Requirement already satisfied: six&gt;=1.12.0 in /home/george/drought-311-venv/l
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyterlab_widgets in /home/george/drought-311-venv/lib64/python3.11/site-packages (3.0.10)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jupyterlab_widgets in /Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages (3.0.16)
 </pre></div>
 </div>
 </div>
@@ -752,14 +767,16 @@ Requirement already satisfied: six&gt;=1.12.0 in /home/george/drought-311-venv/l
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-need-to-install">What do you need to install?</a></li>
 </ul>
@@ -803,8 +820,8 @@ By George Begkas, Marina Caporlingua, Lucy Colley, Akis Karagiannis - Thanks to 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

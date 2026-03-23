@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=ee12de98" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -64,6 +67,7 @@
     <link rel="search" title="Search" href="../../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -79,19 +83,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../../search.html"
       method="get">
@@ -99,7 +92,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,8 +99,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../../../_static/logo-no-bg.png" class="logo__image only-light" alt="Tales of Dry Lands - Home"/>
-    <script>document.write(`<img src="../../../_static/logo-no-bg.png" class="logo__image only-dark" alt="Tales of Dry Lands - Home"/>`);</script>
+    <img src="../../../_static/logo-no-bg.png" class="logo__image only-dark pst-js-only" alt="Tales of Dry Lands - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -205,7 +194,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-time-machine.html">The Time Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-focus-madagascar.html">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -230,9 +218,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -276,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook" target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook/issues/new?title=Issue%20on%20page%20%2Fchapters/shared/utils/get-country-list.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/issues/new?title=Issue%20on%20page%20%2Fchapters/shared/utils/get-country-list.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -376,25 +369,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -432,24 +417,24 @@ document.write(`
   <p>This notebook is used to get countries names and isocodes (for the ADM0, ADM1, and ADM2 subdivisions) from <a class="reference external" href="https://www.geoboundaries.org/">geoBoundaries Global Database of Political Administrative Boundaries Database</a> API and save them into a json file.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span><span class="p">,</span> <span class="n">unquote</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urlparse</span><span class="p">,</span> <span class="n">unquote</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_logging</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">setup_logging</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Set up logging to file.&quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;geo_boundaries_errors.log&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">ERROR</span><span class="p">,</span>
                         <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1">:</span><span class="si">%(levelname)s</span><span class="s1">:</span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Fetch data from the provided URL.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -459,7 +444,7 @@ document.write(`
         <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to fetch data from </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">None</span>
 
-<span class="k">def</span> <span class="nf">download_geojson</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">download_geojson</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">folder_path</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Download and save the GeoJSON file, keeping the original file name from the URL.&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">file_name</span> <span class="o">=</span> <span class="n">unquote</span><span class="p">(</span><span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
@@ -476,7 +461,7 @@ document.write(`
         <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to fetch or save GeoJSON for </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">False</span>
 
-<span class="k">def</span> <span class="nf">manage_geoboundaries_retrieval</span><span class="p">(</span><span class="n">adm_level</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">manage_geoboundaries_retrieval</span><span class="p">(</span><span class="n">adm_level</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">setup_logging</span><span class="p">()</span>
     
     <span class="n">base_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://www.geoboundaries.org/api/current/gbOpen/ALL/</span><span class="si">{</span><span class="n">adm_level</span><span class="si">}</span><span class="s2">/&quot;</span>
@@ -508,11 +493,11 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.geojson&#39;</span><span class="p">)]</span>
 
 
-<span class="k">def</span> <span class="nf">separate_files_by_adm_level</span><span class="p">(</span><span class="n">geojson_files</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">separate_files_by_adm_level</span><span class="p">(</span><span class="n">geojson_files</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">):</span>
     <span class="n">countries</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">adm1_subareas</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">adm2_subareas</span> <span class="o">=</span> <span class="p">{}</span>
@@ -535,7 +520,7 @@ document.write(`
     <span class="k">return</span> <span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span>
 
 
-<span class="k">def</span> <span class="nf">process_adm_files</span><span class="p">(</span><span class="n">adm_files</span><span class="p">,</span> <span class="n">subareas</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_adm_files</span><span class="p">(</span><span class="n">adm_files</span><span class="p">,</span> <span class="n">subareas</span><span class="p">):</span>
     <span class="n">subarea_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">adm_path</span> <span class="ow">in</span> <span class="n">adm_files</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">adm_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sub_file</span><span class="p">:</span>
@@ -553,7 +538,7 @@ document.write(`
     <span class="k">return</span> <span class="n">subarea_list</span>
 
 
-<span class="k">def</span> <span class="nf">process_countries</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_countries</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">):</span>
     <span class="n">country_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">missing_countries</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -583,7 +568,7 @@ document.write(`
     <span class="k">return</span> <span class="n">country_list</span><span class="p">,</span> <span class="n">missing_countries</span>
 
 
-<span class="k">def</span> <span class="nf">process_missing_countries</span><span class="p">(</span><span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">,</span> <span class="n">existing_countries</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">process_missing_countries</span><span class="p">(</span><span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">,</span> <span class="n">existing_countries</span><span class="p">):</span>
     <span class="n">missing_countries</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">iso_code</span><span class="p">,</span> <span class="n">adm1_files</span> <span class="ow">in</span> <span class="n">adm1_subareas</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -599,7 +584,7 @@ document.write(`
     <span class="k">return</span> <span class="n">missing_countries</span>
 
 
-<span class="k">def</span> <span class="nf">write_json_files</span><span class="p">(</span><span class="n">country_list</span><span class="p">,</span> <span class="n">missing_countries</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_json_files</span><span class="p">(</span><span class="n">country_list</span><span class="p">,</span> <span class="n">missing_countries</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;countries.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">country_list</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
@@ -607,7 +592,7 @@ document.write(`
         <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">missing_countries</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">create_country_list_json</span><span class="p">(</span><span class="n">directory_path</span><span class="o">=</span><span class="s1">&#39;country-geojson&#39;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_country_list_json</span><span class="p">(</span><span class="n">directory_path</span><span class="o">=</span><span class="s1">&#39;country-geojson&#39;</span><span class="p">):</span>
     <span class="n">geojson_files</span> <span class="o">=</span> <span class="n">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
     <span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span> <span class="o">=</span> <span class="n">separate_files_by_adm_level</span><span class="p">(</span><span class="n">geojson_files</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">)</span>
     
@@ -643,13 +628,13 @@ document.write(`
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing countries have been saved to </span><span class="si">{</span><span class="n">missing_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="nn">Cell In[4], line 101,</span> in <span class="ni">create_country_list_json</span><span class="nt">(directory_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">def</span> <span class="nf">create_country_list_json</span><span class="p">(</span><span class="n">directory_path</span><span class="o">=</span><span class="s1">&#39;country-geojson&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_country_list_json</span><span class="p">(</span><span class="n">directory_path</span><span class="o">=</span><span class="s1">&#39;country-geojson&#39;</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">geojson_files</span> <span class="o">=</span> <span class="n">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span> <span class="o">=</span> <span class="n">separate_files_by_adm_level</span><span class="p">(</span><span class="n">geojson_files</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">country_list</span><span class="p">,</span> <span class="n">initial_missing_countries</span> <span class="o">=</span> <span class="n">process_countries</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">)</span>
 
 <span class="nn">Cell In[4], line 2,</span> in <span class="ni">list_geojson_files</span><span class="nt">(directory_path)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.geojson&#39;</span><span class="p">)]</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;country-geojson&#39;
@@ -695,14 +680,16 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="simple visible nav section-nav flex-column">
 </ul>
 
@@ -746,8 +733,8 @@ By George Begkas, Marina Caporlingua, Lucy Colley, Akis Karagiannis - Thanks to 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

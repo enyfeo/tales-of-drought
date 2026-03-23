@@ -3,7 +3,7 @@
 
 In the previous chapters, we explored how data is generated and what types of data are related to drought events. Now, it is important to understand how we can access the data for our analyses.
 
-The primary source for our data is the [Climate Data Store](https://cds-beta.climate.copernicus.eu/), a comprehensive and free online platform provided by the European Centre for Medium-Range Weather Forecasts (ECMWF) on behalf of the Copernicus Climate Change Service (C3S). 
+The primary source for our data is the [Climate Data Store](https://cds.climate.copernicus.eu/), a comprehensive and free online platform provided by the European Centre for Medium-Range Weather Forecasts (ECMWF) on behalf of the Copernicus Climate Change Service (C3S). 
 
 The CDS is designed to offer access to a wide range of climate data and tools, making it a valuable resource for anyone interested in climate-related information.
 
@@ -31,7 +31,7 @@ All data and tools available on the CDS are free to use
 
 
 ```{important}
-Here is the source to learn about and access our data: [Drought indicators derived from ERA5 reanalysis](https://cds-beta.climate.copernicus.eu/datasets/derived-drought-historical?tab=overview).
+Here is the source to learn about and access our data: [Drought indicators derived from ERA5 reanalysis](https://cds.climate.copernicus.eu/datasets/derived-drought-historical?tab=overview).
 ```
 
 ```{tip}
@@ -44,7 +44,7 @@ Here you can find more information about all the [types of dataset available on 
 Besides data access, the CDS offers various tools for data processing and analysis. You can create custom data extractions, visualize trends, and generate tailored reports based on your specific needs. There are two main ways to obtain the data: downloading it through a web interface or accessing it programmatically via the API. In our case, we will access the data via API.
 
 ```{tip}
-Here you can find a useful explanation on how to use them depending on the operating system you are using: [CDSAPI setup](https://cds-beta.climate.copernicus.eu/how-to-api).
+Here you can find a useful explanation on how to use them depending on the operating system you are using: [CDSAPI setup](https://cds.climate.copernicus.eu/how-to-api).
 ```
 
 
@@ -53,5 +53,5 @@ Here you can find a useful explanation on how to use them depending on the opera
 The CDS provides extensive documentation, tutorials, and user support to help you understand and effectively use the available data and tools. 
 
 ```{tip}
-You can find more at this link: [Learning resources to facilitate use of datasets on the CDS](https://cds-beta.climate.copernicus.eu/training), and also at this one: [User guide](https://cds-beta.climate.copernicus.eu/user-guide)
+You can find more at this link: [Learning resources to facilitate use of datasets on the CDS](https://cds.climate.copernicus.eu/training), and also at this one: [User guide](https://cds.climate.copernicus.eu/user-guide)
 ```

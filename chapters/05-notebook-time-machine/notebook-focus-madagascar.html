@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee12de98" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -63,9 +66,10 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Find and analyse drought events" href="../06-notebook-quantum-of-drought/notebook-quantum-of-drought.html" />
-    <link rel="prev" title="Mapping current global drought events" href="notebook-mapping-current-global-drought-events.html" />
+    <link rel="prev" title="The Time Machine, identify drought events" href="notebook-time-machine.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../../_static/logo-no-bg.png" class="logo__image only-light" alt="Tales of Dry Lands - Home"/>
-    <script>document.write(`<img src="../../_static/logo-no-bg.png" class="logo__image only-dark" alt="Tales of Dry Lands - Home"/>`);</script>
+    <img src="../../_static/logo-no-bg.png" class="logo__image only-dark pst-js-only" alt="Tales of Dry Lands - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -205,7 +194,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebook-time-machine.html">The Time Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -230,9 +218,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -276,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook" target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook/issues/new?title=Issue%20on%20page%20%2Fchapters/05-notebook-time-machine/notebook-focus-madagascar.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/issues/new?title=Issue%20on%20page%20%2Fchapters/05-notebook-time-machine/notebook-focus-madagascar.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -376,25 +369,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -444,20 +429,20 @@ document.write(`
 <p>This is an example of the type of analysis you can conduct once you’ve retrieved the coordinates of your area of interest, and this will be particularly significant when we reach the third phase of our journey, where we’ll explore the drivers of drought.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
     <span class="n">data_root_folder</span> <span class="o">=</span> <span class="s1">&#39;/data1/drought_dataset/spi/&#39;</span>
     <span class="n">spi_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_root_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;spi</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">spi_paths</span> <span class="o">=</span> <span class="p">[]</span>
@@ -469,7 +454,7 @@ document.write(`
     <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">spi_paths</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">},</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">get_spei_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_spei_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
     <span class="n">data_root_folder</span> <span class="o">=</span> <span class="s1">&#39;/data1/drought_dataset/spei/&#39;</span>
     <span class="n">spi_folder</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">data_root_folder</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;spi</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">spi_paths</span> <span class="o">=</span> <span class="p">[]</span>
@@ -481,12 +466,12 @@ document.write(`
     <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">spi_paths</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">},</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">mask_invalid_values</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="o">=-</span><span class="mi">9999</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mask_invalid_values</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="o">=-</span><span class="mi">9999</span><span class="p">):</span>
     <span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span> <span class="o">!=</span> <span class="n">value</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ds</span>
 
 
-<span class="k">def</span> <span class="nf">subset_madagascar</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">subset_madagascar</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
     <span class="c1"># data = dataset.sel(time=np.datetime64(time), method=&#39;nearest&#39;)[variable]</span>
 
     <span class="c1"># Define the geographical boundaries for Madagascar</span>
@@ -528,7 +513,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_spei_significance_dataset</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="s1">&#39;SPEI1&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_spei_significance_dataset</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="s1">&#39;SPEI1&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">):</span>
     <span class="n">data_root_folder</span><span class="o">=</span><span class="s1">&#39;/data1/drought_dataset/spei/&#39;</span>
     <span class="n">quality_paths</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
@@ -536,7 +521,7 @@ document.write(`
         <span class="n">quality_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_root_folder</span><span class="si">}{</span><span class="n">variable</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">/parameter/</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">_significance_global_era5_moda_</span><span class="si">{</span><span class="n">year</span><span class="si">}{</span><span class="n">month_str</span><span class="si">}</span><span class="s1">_ref1991to2020.nc&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">quality_paths</span><span class="p">,</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_spi_significance_dataset</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="s1">&#39;SPI1&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_spi_significance_dataset</span><span class="p">(</span><span class="n">variable</span><span class="o">=</span><span class="s1">&#39;SPI1&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2020</span><span class="p">):</span>
     <span class="n">data_root_folder</span><span class="o">=</span><span class="s1">&#39;/data1/drought_dataset/spi/&#39;</span>
     <span class="n">quality_paths</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">):</span>
@@ -565,6 +550,31 @@ document.write(`
 
 <span class="n">spei1_significance_madagascar</span> <span class="o">=</span> <span class="n">mask_invalid_values</span><span class="p">(</span><span class="n">subset_madagascar</span><span class="p">(</span><span class="n">spei1_significance</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">),</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 <span class="n">spi1_significance_madagascar</span> <span class="o">=</span> <span class="n">mask_invalid_values</span><span class="p">(</span><span class="n">subset_madagascar</span><span class="p">(</span><span class="n">spi1_significance</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">),</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spi1</span> <span class="o">=</span> <span class="n">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">spi12</span> <span class="o">=</span> <span class="n">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">spei1</span> <span class="o">=</span> <span class="n">get_spei_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
+
+<span class="nn">Cell In[2], line 10,</span> in <span class="ni">get_spi_dataset</span><span class="nt">(acc_period, years)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">spi_paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_root_folder</span><span class="si">}</span><span class="s1">spi</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">/SPI</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">_gamma_global_era5_moda_ref1991to2020_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">*.nc&#39;</span><span class="p">)))</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">spi_paths</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">},</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nn">File ~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/backends/api.py:1591,</span> in <span class="ni">open_mfdataset</span><span class="nt">(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, errors, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1588</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">_find_absolute_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1590</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1591</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;no files to open&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1593</span> <span class="n">paths1d</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ReadBuffer</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1594</span> <span class="k">if</span> <span class="n">combine</span> <span class="o">==</span> <span class="s2">&quot;nested&quot;</span><span class="p">:</span>
+
+<span class="ne">OSError</span>: no files to open
 </pre></div>
 </div>
 </div>
@@ -947,7 +957,7 @@ Coordinates:
   * lon      (lon) float64 392B 40.25 40.5 40.75 41.0 ... 51.5 51.75 52.0 52.25
   * lat      (lat) float64 544B -10.0 -10.25 -10.5 ... -26.25 -26.5 -26.75
 Attributes:
-    units:    -</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'significance'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 68</li><li><span class='xr-has-index'>lon</span>: 49</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-3f58035b-5715-4e42-be56-049192d330e5' class='xr-array-in' type='checkbox' checked><label for='section-3f58035b-5715-4e42-be56-049192d330e5' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(68, 49), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+    units:    -</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'significance'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 68</li><li><span class='xr-has-index'>lon</span>: 49</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-2f8c2676-2204-4fdc-a1f8-24ea1019c4b3' class='xr-array-in' type='checkbox' checked><label for='section-2f8c2676-2204-4fdc-a1f8-24ea1019c4b3' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(68, 49), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1002,23 +1012,23 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></div></li><li class='xr-section-item'><input id='section-43a22c9b-6e93-4b59-96a4-b02f6b736c85' class='xr-section-summary-in' type='checkbox'  checked><label for='section-43a22c9b-6e93-4b59-96a4-b02f6b736c85' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-02-01</div><input id='attrs-8aabdad3-6f5e-45dd-bcff-adea8b03af9a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8aabdad3-6f5e-45dd-bcff-adea8b03af9a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-52678d10-7cf0-495a-8ce7-814154526e1b' class='xr-var-data-in' type='checkbox'><label for='data-52678d10-7cf0-495a-8ce7-814154526e1b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2020-02-01T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>40.25 40.5 40.75 ... 52.0 52.25</div><input id='attrs-0e62886d-ca67-4446-8023-da2d9735e56d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0e62886d-ca67-4446-8023-da2d9735e56d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-eaf5dde4-fb30-4e09-a107-9282d7d9c2f3' class='xr-var-data-in' type='checkbox'><label for='data-eaf5dde4-fb30-4e09-a107-9282d7d9c2f3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([40.25, 40.5 , 40.75, 41.  , 41.25, 41.5 , 41.75, 42.  , 42.25, 42.5 ,
+</table></div></div></li><li class='xr-section-item'><input id='section-eb6c0732-e231-430b-8f54-7c5279c340e4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-eb6c0732-e231-430b-8f54-7c5279c340e4' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-02-01</div><input id='attrs-46bb2a3d-6af8-4624-8dea-4b34c560df6d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-46bb2a3d-6af8-4624-8dea-4b34c560df6d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1c87f68b-653c-4d83-8886-3932724270f1' class='xr-var-data-in' type='checkbox'><label for='data-1c87f68b-653c-4d83-8886-3932724270f1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2020-02-01T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>40.25 40.5 40.75 ... 52.0 52.25</div><input id='attrs-a7bfe7e1-47be-4519-b0cf-1350d48d5fd4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a7bfe7e1-47be-4519-b0cf-1350d48d5fd4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ae7b7fab-1c25-4ffa-a6d2-dfe47d22a289' class='xr-var-data-in' type='checkbox'><label for='data-ae7b7fab-1c25-4ffa-a6d2-dfe47d22a289' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([40.25, 40.5 , 40.75, 41.  , 41.25, 41.5 , 41.75, 42.  , 42.25, 42.5 ,
        42.75, 43.  , 43.25, 43.5 , 43.75, 44.  , 44.25, 44.5 , 44.75, 45.  ,
        45.25, 45.5 , 45.75, 46.  , 46.25, 46.5 , 46.75, 47.  , 47.25, 47.5 ,
        47.75, 48.  , 48.25, 48.5 , 48.75, 49.  , 49.25, 49.5 , 49.75, 50.  ,
-       50.25, 50.5 , 50.75, 51.  , 51.25, 51.5 , 51.75, 52.  , 52.25])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-10.0 -10.25 -10.5 ... -26.5 -26.75</div><input id='attrs-06617cf6-4c85-45d7-9fea-f723028aeb31' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-06617cf6-4c85-45d7-9fea-f723028aeb31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-23214f28-4c29-4df8-b553-140e729ffc84' class='xr-var-data-in' type='checkbox'><label for='data-23214f28-4c29-4df8-b553-140e729ffc84' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-10.  , -10.25, -10.5 , -10.75, -11.  , -11.25, -11.5 , -11.75, -12.  ,
+       50.25, 50.5 , 50.75, 51.  , 51.25, 51.5 , 51.75, 52.  , 52.25])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-10.0 -10.25 -10.5 ... -26.5 -26.75</div><input id='attrs-d26cd935-ca98-4962-976c-2fde613bd9ae' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d26cd935-ca98-4962-976c-2fde613bd9ae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ba3b97b7-d4dc-4c71-a974-3bbd50f8596c' class='xr-var-data-in' type='checkbox'><label for='data-ba3b97b7-d4dc-4c71-a974-3bbd50f8596c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-10.  , -10.25, -10.5 , -10.75, -11.  , -11.25, -11.5 , -11.75, -12.  ,
        -12.25, -12.5 , -12.75, -13.  , -13.25, -13.5 , -13.75, -14.  , -14.25,
        -14.5 , -14.75, -15.  , -15.25, -15.5 , -15.75, -16.  , -16.25, -16.5 ,
        -16.75, -17.  , -17.25, -17.5 , -17.75, -18.  , -18.25, -18.5 , -18.75,
        -19.  , -19.25, -19.5 , -19.75, -20.  , -20.25, -20.5 , -20.75, -21.  ,
        -21.25, -21.5 , -21.75, -22.  , -22.25, -22.5 , -22.75, -23.  , -23.25,
        -23.5 , -23.75, -24.  , -24.25, -24.5 , -24.75, -25.  , -25.25, -25.5 ,
-       -25.75, -26.  , -26.25, -26.5 , -26.75])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7da376bf-9aee-49d1-a833-a5976ce917e2' class='xr-section-summary-in' type='checkbox'  ><label for='section-7da376bf-9aee-49d1-a833-a5976ce917e2' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-6025c9d5-b9d5-4aba-9d6a-25bb6f895197' class='xr-index-data-in' type='checkbox'/><label for='index-6025c9d5-b9d5-4aba-9d6a-25bb6f895197' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([40.25,  40.5, 40.75,  41.0, 41.25,  41.5, 41.75,  42.0, 42.25,  42.5,
+       -25.75, -26.  , -26.25, -26.5 , -26.75])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d542a370-50cc-4919-b746-fe422b9e177c' class='xr-section-summary-in' type='checkbox'  ><label for='section-d542a370-50cc-4919-b746-fe422b9e177c' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-91d28b2b-e816-4a36-9fcb-0c86ebc00a7d' class='xr-index-data-in' type='checkbox'/><label for='index-91d28b2b-e816-4a36-9fcb-0c86ebc00a7d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([40.25,  40.5, 40.75,  41.0, 41.25,  41.5, 41.75,  42.0, 42.25,  42.5,
        42.75,  43.0, 43.25,  43.5, 43.75,  44.0, 44.25,  44.5, 44.75,  45.0,
        45.25,  45.5, 45.75,  46.0, 46.25,  46.5, 46.75,  47.0, 47.25,  47.5,
        47.75,  48.0, 48.25,  48.5, 48.75,  49.0, 49.25,  49.5, 49.75,  50.0,
        50.25,  50.5, 50.75,  51.0, 51.25,  51.5, 51.75,  52.0, 52.25],
-      dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-28b6805f-5093-4395-a909-eb083f662cca' class='xr-index-data-in' type='checkbox'/><label for='index-28b6805f-5093-4395-a909-eb083f662cca' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -10.0, -10.25,  -10.5, -10.75,  -11.0, -11.25,  -11.5, -11.75,  -12.0,
+      dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-310b39ce-e17c-45e2-8db8-f54408b75292' class='xr-index-data-in' type='checkbox'/><label for='index-310b39ce-e17c-45e2-8db8-f54408b75292' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -10.0, -10.25,  -10.5, -10.75,  -11.0, -11.25,  -11.5, -11.75,  -12.0,
        -12.25,  -12.5, -12.75,  -13.0, -13.25,  -13.5, -13.75,  -14.0, -14.25,
         -14.5, -14.75,  -15.0, -15.25,  -15.5, -15.75,  -16.0, -16.25,  -16.5,
        -16.75,  -17.0, -17.25,  -17.5, -17.75,  -18.0, -18.25,  -18.5, -18.75,
@@ -1026,7 +1036,7 @@ Attributes:
        -21.25,  -21.5, -21.75,  -22.0, -22.25,  -22.5, -22.75,  -23.0, -23.25,
         -23.5, -23.75,  -24.0, -24.25,  -24.5, -24.75,  -25.0, -25.25,  -25.5,
        -25.75,  -26.0, -26.25,  -26.5, -26.75],
-      dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3d0fcc3b-8043-4dd0-b468-e1841b607ac6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3d0fcc3b-8043-4dd0-b468-e1841b607ac6' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>-</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-39f4d66c-4dc4-4429-9cf9-6c48ca2ab76a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-39f4d66c-4dc4-4429-9cf9-6c48ca2ab76a' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>-</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1407,7 +1417,7 @@ Coordinates:
   * lat      (lat) float64 544B -10.0 -10.25 -10.5 ... -26.25 -26.5 -26.75
 Attributes:
     long_name:  Standardized Drought Index (SPEI1)
-    units:      -</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'SPEI1'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 68</li><li><span class='xr-has-index'>lon</span>: 49</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-48605248-1349-4437-901e-05b2edadf62d' class='xr-array-in' type='checkbox' checked><label for='section-48605248-1349-4437-901e-05b2edadf62d' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(68, 49), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
+    units:      -</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'SPEI1'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 68</li><li><span class='xr-has-index'>lon</span>: 49</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-14c7587a-141a-416e-9c53-631c5b08cfe2' class='xr-array-in' type='checkbox' checked><label for='section-14c7587a-141a-416e-9c53-631c5b08cfe2' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>dask.array&lt;chunksize=(68, 49), meta=np.ndarray&gt;</span></div><div class='xr-array-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1462,23 +1472,23 @@ Attributes:
 </svg>
         </td>
     </tr>
-</table></div></div></li><li class='xr-section-item'><input id='section-9973d6b4-916a-4d6e-9082-5f57482fde0d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9973d6b4-916a-4d6e-9082-5f57482fde0d' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-02-01T06:00:00</div><input id='attrs-72d419e6-4d78-405d-8697-7b42d9c138ae' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-72d419e6-4d78-405d-8697-7b42d9c138ae' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f1a875c0-4b8b-419c-b03b-2a52e0a70915' class='xr-var-data-in' type='checkbox'><label for='data-f1a875c0-4b8b-419c-b03b-2a52e0a70915' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2020-02-01T06:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>40.25 40.5 40.75 ... 52.0 52.25</div><input id='attrs-e5211d4c-7b77-463e-89dd-d39c40ca2253' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e5211d4c-7b77-463e-89dd-d39c40ca2253' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9f28b338-638c-4384-b09d-bf33591b9620' class='xr-var-data-in' type='checkbox'><label for='data-9f28b338-638c-4384-b09d-bf33591b9620' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([40.25, 40.5 , 40.75, 41.  , 41.25, 41.5 , 41.75, 42.  , 42.25, 42.5 ,
+</table></div></div></li><li class='xr-section-item'><input id='section-bac93df7-2853-4d0a-b08b-564ab0f07f90' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bac93df7-2853-4d0a-b08b-564ab0f07f90' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-02-01T06:00:00</div><input id='attrs-f92e745e-c299-4532-a766-365b01876b42' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f92e745e-c299-4532-a766-365b01876b42' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cdad3193-187d-4c84-a17c-94b0505b0ce5' class='xr-var-data-in' type='checkbox'><label for='data-cdad3193-187d-4c84-a17c-94b0505b0ce5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array(&#x27;2020-02-01T06:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>40.25 40.5 40.75 ... 52.0 52.25</div><input id='attrs-4f543996-856f-49e8-ad4e-2076f5d8b572' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4f543996-856f-49e8-ad4e-2076f5d8b572' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b362e73a-1329-46f9-8dd5-e8abcd0af839' class='xr-var-data-in' type='checkbox'><label for='data-b362e73a-1329-46f9-8dd5-e8abcd0af839' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([40.25, 40.5 , 40.75, 41.  , 41.25, 41.5 , 41.75, 42.  , 42.25, 42.5 ,
        42.75, 43.  , 43.25, 43.5 , 43.75, 44.  , 44.25, 44.5 , 44.75, 45.  ,
        45.25, 45.5 , 45.75, 46.  , 46.25, 46.5 , 46.75, 47.  , 47.25, 47.5 ,
        47.75, 48.  , 48.25, 48.5 , 48.75, 49.  , 49.25, 49.5 , 49.75, 50.  ,
-       50.25, 50.5 , 50.75, 51.  , 51.25, 51.5 , 51.75, 52.  , 52.25])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-10.0 -10.25 -10.5 ... -26.5 -26.75</div><input id='attrs-1943b707-ed34-40b3-8754-25b47b2cddcb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1943b707-ed34-40b3-8754-25b47b2cddcb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a01fa1bf-55b0-4798-a24b-65d67a4f830f' class='xr-var-data-in' type='checkbox'><label for='data-a01fa1bf-55b0-4798-a24b-65d67a4f830f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-10.  , -10.25, -10.5 , -10.75, -11.  , -11.25, -11.5 , -11.75, -12.  ,
+       50.25, 50.5 , 50.75, 51.  , 51.25, 51.5 , 51.75, 52.  , 52.25])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-10.0 -10.25 -10.5 ... -26.5 -26.75</div><input id='attrs-273e1795-df63-4e76-80b8-7ca4783d2e03' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-273e1795-df63-4e76-80b8-7ca4783d2e03' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-04860069-6e8d-40f2-b495-f19d58e88d16' class='xr-var-data-in' type='checkbox'><label for='data-04860069-6e8d-40f2-b495-f19d58e88d16' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([-10.  , -10.25, -10.5 , -10.75, -11.  , -11.25, -11.5 , -11.75, -12.  ,
        -12.25, -12.5 , -12.75, -13.  , -13.25, -13.5 , -13.75, -14.  , -14.25,
        -14.5 , -14.75, -15.  , -15.25, -15.5 , -15.75, -16.  , -16.25, -16.5 ,
        -16.75, -17.  , -17.25, -17.5 , -17.75, -18.  , -18.25, -18.5 , -18.75,
        -19.  , -19.25, -19.5 , -19.75, -20.  , -20.25, -20.5 , -20.75, -21.  ,
        -21.25, -21.5 , -21.75, -22.  , -22.25, -22.5 , -22.75, -23.  , -23.25,
        -23.5 , -23.75, -24.  , -24.25, -24.5 , -24.75, -25.  , -25.25, -25.5 ,
-       -25.75, -26.  , -26.25, -26.5 , -26.75])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9a836d48-fc46-41dd-b614-05dcc9664bcd' class='xr-section-summary-in' type='checkbox'  ><label for='section-9a836d48-fc46-41dd-b614-05dcc9664bcd' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-cfd2172a-3bfd-4aaa-9a8c-30fda8b96c3d' class='xr-index-data-in' type='checkbox'/><label for='index-cfd2172a-3bfd-4aaa-9a8c-30fda8b96c3d' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([40.25,  40.5, 40.75,  41.0, 41.25,  41.5, 41.75,  42.0, 42.25,  42.5,
+       -25.75, -26.  , -26.25, -26.5 , -26.75])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-889286cc-e4ee-4a47-b696-7e0dd1088fa5' class='xr-section-summary-in' type='checkbox'  ><label for='section-889286cc-e4ee-4a47-b696-7e0dd1088fa5' class='xr-section-summary' >Indexes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-cba4531b-a048-43c2-8e7e-8b0e82642f50' class='xr-index-data-in' type='checkbox'/><label for='index-cba4531b-a048-43c2-8e7e-8b0e82642f50' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([40.25,  40.5, 40.75,  41.0, 41.25,  41.5, 41.75,  42.0, 42.25,  42.5,
        42.75,  43.0, 43.25,  43.5, 43.75,  44.0, 44.25,  44.5, 44.75,  45.0,
        45.25,  45.5, 45.75,  46.0, 46.25,  46.5, 46.75,  47.0, 47.25,  47.5,
        47.75,  48.0, 48.25,  48.5, 48.75,  49.0, 49.25,  49.5, 49.75,  50.0,
        50.25,  50.5, 50.75,  51.0, 51.25,  51.5, 51.75,  52.0, 52.25],
-      dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-9d32662a-6f04-422f-b024-7ff8ce21c969' class='xr-index-data-in' type='checkbox'/><label for='index-9d32662a-6f04-422f-b024-7ff8ce21c969' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -10.0, -10.25,  -10.5, -10.75,  -11.0, -11.25,  -11.5, -11.75,  -12.0,
+      dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d5023d44-a8df-49cd-ae83-75e8a21169a6' class='xr-index-data-in' type='checkbox'/><label for='index-d5023d44-a8df-49cd-ae83-75e8a21169a6' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -10.0, -10.25,  -10.5, -10.75,  -11.0, -11.25,  -11.5, -11.75,  -12.0,
        -12.25,  -12.5, -12.75,  -13.0, -13.25,  -13.5, -13.75,  -14.0, -14.25,
         -14.5, -14.75,  -15.0, -15.25,  -15.5, -15.75,  -16.0, -16.25,  -16.5,
        -16.75,  -17.0, -17.25,  -17.5, -17.75,  -18.0, -18.25,  -18.5, -18.75,
@@ -1486,7 +1496,7 @@ Attributes:
        -21.25,  -21.5, -21.75,  -22.0, -22.25,  -22.5, -22.75,  -23.0, -23.25,
         -23.5, -23.75,  -24.0, -24.25,  -24.5, -24.75,  -25.0, -25.25,  -25.5,
        -25.75,  -26.0, -26.25,  -26.5, -26.75],
-      dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fd88fe45-ef98-4005-8012-2208103727ae' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fd88fe45-ef98-4005-8012-2208103727ae' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Standardized Drought Index (SPEI1)</dd><dt><span>units :</span></dt><dd>-</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-544d1db0-dcb4-4950-aa98-b3a5481097ad' class='xr-section-summary-in' type='checkbox'  checked><label for='section-544d1db0-dcb4-4950-aa98-b3a5481097ad' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Standardized Drought Index (SPEI1)</dd><dt><span>units :</span></dt><dd>-</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1509,7 +1519,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_spei1_annual</span><span class="p">(</span><span class="n">spei1</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_spei1_annual</span><span class="p">(</span><span class="n">spei1</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
     <span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="s2">&quot;April&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;June&quot;</span><span class="p">,</span>
               <span class="s2">&quot;July&quot;</span><span class="p">,</span> <span class="s2">&quot;August&quot;</span><span class="p">,</span> <span class="s2">&quot;September&quot;</span><span class="p">,</span> <span class="s2">&quot;October&quot;</span><span class="p">,</span> <span class="s2">&quot;November&quot;</span><span class="p">,</span> <span class="s2">&quot;December&quot;</span><span class="p">]</span>
@@ -1523,7 +1533,7 @@ Attributes:
     <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">plot_spi1_annual</span><span class="p">(</span><span class="n">spi1</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_spi1_annual</span><span class="p">(</span><span class="n">spi1</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
     <span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="s2">&quot;April&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;June&quot;</span><span class="p">,</span>
               <span class="s2">&quot;July&quot;</span><span class="p">,</span> <span class="s2">&quot;August&quot;</span><span class="p">,</span> <span class="s2">&quot;September&quot;</span><span class="p">,</span> <span class="s2">&quot;October&quot;</span><span class="p">,</span> <span class="s2">&quot;November&quot;</span><span class="p">,</span> <span class="s2">&quot;December&quot;</span><span class="p">]</span>
@@ -1700,12 +1710,12 @@ Attributes:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebook-mapping-current-global-drought-events.html"
+       href="notebook-time-machine.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Mapping current global drought events</p>
+        <p class="prev-next-title">The Time Machine, identify drought events</p>
       </div>
     </a>
     <a class="right-next"
@@ -1724,14 +1734,16 @@ Attributes:
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#significance">Significance</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monthly-spei-with-masked-significance">Monthly SPEI with masked significance</a></li>
@@ -1781,8 +1793,8 @@ By George Begkas, Marina Caporlingua, Lucy Colley, Akis Karagiannis - Thanks to 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

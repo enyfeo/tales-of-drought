@@ -1,20 +1,20 @@
 Traceback (most recent call last):
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 1323, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/lib64/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
     await self.async_execute_cell(
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/george/drought-311-venv/lib64/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
@@ -30,60 +30,57 @@ ds_monthly['stl4_c'] = ds_monthly['stl4'] - 273.15
 ------------------
 
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m~/drought-311-venv/lib64/python3.11/site-packages/xarray/core/dataset.py[0m in [0;36m?[0;34m(self, name)[0m
-[1;32m   1477[0m             [0mvariable[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_variables[0m[0;34m[[0m[0mname[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1478[0m         [0;32mexcept[0m [0mKeyError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1479[0;31m             [0m_[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mvariable[0m [0;34m=[0m [0m_get_virtual_variable[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_variables[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0msizes[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1480[0m [0;34m[0m[0m
+[31m---------------------------------------------------------------------------[39m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/core/dataset.py[39m in [36m?[39m[34m(self, name)[39m
+[32m   1237[39m             variable = self._variables[name]
+[32m   1238[39m         [38;5;28;01mexcept[39;00m KeyError:
+[32m-> [39m[32m1239[39m             _, name, variable = _get_virtual_variable(self._variables, name, self.sizes)
+[32m   1240[39m 
 
-[0;31mKeyError[0m: 't2m'
+[31mKeyError[39m: 't2m'
 
 During handling of the above exception, another exception occurred:
 
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m~/drought-311-venv/lib64/python3.11/site-packages/xarray/core/dataset.py[0m in [0;36m?[0;34m(self, key)[0m
-[1;32m   1576[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_construct_dataarray[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1577[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1578[0;31m                 raise KeyError(
-[0m[1;32m   1579[0m                     [0;34mf"No variable named {key!r}. Variables on the dataset include {shorten_list_repr(list(self.variables.keys()), max_items=10)}"[0m[0;34m[0m[0;34m[0m[0m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/core/dataset.py:1344[39m, in [36mDataset.__getitem__[39m[34m(self, key)[39m
+[32m   1343[39m [38;5;28;01mtry[39;00m:
+[32m-> [39m[32m1344[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43m_construct_dataarray[49m[43m([49m[43mkey[49m[43m)[49m
+[32m   1345[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m [38;5;28;01mas[39;00m e:
 
-[0;32m~/drought-311-venv/lib64/python3.11/site-packages/xarray/core/dataset.py[0m in [0;36m?[0;34m(self, name)[0m
-[1;32m   1477[0m             [0mvariable[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_variables[0m[0;34m[[0m[0mname[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1478[0m         [0;32mexcept[0m [0mKeyError[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1479[0;31m             [0m_[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mvariable[0m [0;34m=[0m [0m_get_virtual_variable[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_variables[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0msizes[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m   1480[0m [0;34m[0m[0m
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/core/dataset.py:1239[39m, in [36mDataset._construct_dataarray[39m[34m(self, name)[39m
+[32m   1238[39m [38;5;28;01mexcept[39;00m [38;5;167;01mKeyError[39;00m:
+[32m-> [39m[32m1239[39m     _, name, variable = [43m_get_virtual_variable[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43m_variables[49m[43m,[49m[43m [49m[43mname[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43msizes[49m[43m)[49m
+[32m   1241[39m needed_dims = [38;5;28mset[39m(variable.dims)
 
-[0;32m~/drought-311-venv/lib64/python3.11/site-packages/xarray/core/dataset.py[0m in [0;36m?[0;34m(variables, key, dim_sizes)[0m
-[1;32m    211[0m     [0msplit_key[0m [0;34m=[0m [0mkey[0m[0;34m.[0m[0msplit[0m[0;34m([0m[0;34m"."[0m[0;34m,[0m [0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    212[0m     [0;32mif[0m [0mlen[0m[0;34m([0m[0msplit_key[0m[0;34m)[0m [0;34m!=[0m [0;36m2[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 213[0;31m         [0;32mraise[0m [0mKeyError[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    214[0m [0;34m[0m[0m
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/core/dataset_utils.py:79[39m, in [36m_get_virtual_variable[39m[34m(variables, key, dim_sizes)[39m
+[32m     78[39m [38;5;28;01mif[39;00m [38;5;28mlen[39m(split_key) != [32m2[39m:
+[32m---> [39m[32m79[39m     [38;5;28;01mraise[39;00m [38;5;167;01mKeyError[39;00m(key)
+[32m     81[39m ref_name, var_name = split_key
 
-[0;31mKeyError[0m: 't2m'
+[31mKeyError[39m: 't2m'
 
 The above exception was the direct cause of the following exception:
 
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2258236/2383951278.py[0m in [0;36m?[0;34m()[0m
-[1;32m      1[0m [0;31m# Resample to monthly data (if necessary)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      2[0m [0mds_sorted[0m [0;34m=[0m [0mds[0m[0;34m.[0m[0msortby[0m[0;34m([0m[0;34m'valid_time'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0mds_monthly[0m [0;34m=[0m [0mds_sorted[0m[0;34m.[0m[0mresample[0m[0;34m([0m[0mvalid_time[0m[0;34m=[0m[0;34m'1ME'[0m[0;34m)[0m[0;34m.[0m[0mfirst[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 4[0;31m [0mds_monthly[0m[0;34m[[0m[0;34m't2m_c'[0m[0;34m][0m [0;34m=[0m [0mds_monthly[0m[0;34m[[0m[0;34m't2m'[0m[0;34m][0m [0;34m-[0m [0;36m273.15[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      5[0m [0mds_monthly[0m[0;34m[[0m[0;34m'skt_c'[0m[0;34m][0m [0;34m=[0m [0mds_monthly[0m[0;34m[[0m[0;34m'skt'[0m[0;34m][0m [0;34m-[0m [0;36m273.15[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      6[0m [0mds_monthly[0m[0;34m[[0m[0;34m'stl1_c'[0m[0;34m][0m [0;34m=[0m [0mds_monthly[0m[0;34m[[0m[0;34m'stl1'[0m[0;34m][0m [0;34m-[0m [0;36m273.15[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      7[0m [0mds_monthly[0m[0;34m[[0m[0;34m'stl2_c'[0m[0;34m][0m [0;34m=[0m [0mds_monthly[0m[0;34m[[0m[0;34m'stl2'[0m[0;34m][0m [0;34m-[0m [0;36m273.15[0m[0;34m[0m[0;34m[0m[0m
+[31mKeyError[39m                                  Traceback (most recent call last)
+[32m/var/folders/9d/fb0cyg554yn045qch38xt09m0000gn/T/ipykernel_8286/2383951278.py[39m in [36m?[39m[34m()[39m
+[32m      1[39m [38;5;66;03m# Resample to monthly data (if necessary)[39;00m
+[32m      2[39m ds_sorted = ds.sortby([33m'valid_time'[39m)
+[32m      3[39m ds_monthly = ds_sorted.resample(valid_time=[33m'1ME'[39m).first()
+[32m----> [39m[32m4[39m ds_monthly[[33m't2m_c'[39m] = ds_monthly[[33m't2m'[39m] - [32m273.15[39m
+[32m      5[39m ds_monthly[[33m'skt_c'[39m] = ds_monthly[[33m'skt'[39m] - [32m273.15[39m
+[32m      6[39m ds_monthly[[33m'stl1_c'[39m] = ds_monthly[[33m'stl1'[39m] - [32m273.15[39m
+[32m      7[39m ds_monthly[[33m'stl2_c'[39m] = ds_monthly[[33m'stl2'[39m] - [32m273.15[39m
 
-[0;32m~/drought-311-venv/lib64/python3.11/site-packages/xarray/core/dataset.py[0m in [0;36m?[0;34m(self, key)[0m
-[1;32m   1574[0m         [0;32mif[0m [0mutils[0m[0;34m.[0m[0mhashable[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1575[0m             [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1576[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_construct_dataarray[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1577[0m             [0;32mexcept[0m [0mKeyError[0m [0;32mas[0m [0me[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1578[0;31m                 raise KeyError(
-[0m[1;32m   1579[0m                     [0;34mf"No variable named {key!r}. Variables on the dataset include {shorten_list_repr(list(self.variables.keys()), max_items=10)}"[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1580[0m                 ) from e
-[1;32m   1581[0m [0;34m[0m[0m
+[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/core/dataset.py[39m in [36m?[39m[34m(self, key)[39m
+[32m   1353[39m 
+[32m   1354[39m                 [38;5;66;03m# If someone attempts `ds['foo' , 'bar']` instead of `ds[['foo', 'bar']]`[39;00m
+[32m   1355[39m                 [38;5;28;01mif[39;00m isinstance(key, tuple):
+[32m   1356[39m                     message += f"\nHint: use a list to select multiple variables, for example `ds[{list(key)}]`"
+[32m-> [39m[32m1357[39m                 [38;5;28;01mraise[39;00m KeyError(message) [38;5;28;01mfrom[39;00m e
+[32m   1358[39m 
+[32m   1359[39m         [38;5;28;01mif[39;00m utils.iterable_of_hashable(key):
+[32m   1360[39m             [38;5;28;01mreturn[39;00m self._copy_listed(key)
 
-[0;31mKeyError[0m: "No variable named 't2m'. Variables on the dataset include ['swvl1', 'swvl2', 'swvl3', 'swvl4', 'stl1', ..., 'pev', 'number', 'latitude', 'longitude', 'valid_time']"
+[31mKeyError[39m: "No variable named 't2m'. Variables on the dataset include ['swvl1', 'swvl2', 'swvl3', 'swvl4', 'stl1', ..., 'pev', 'number', 'latitude', 'longitude', 'valid_time']"
 

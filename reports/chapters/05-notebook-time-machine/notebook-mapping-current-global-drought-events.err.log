@@ -1,0 +1,53 @@
+Traceback (most recent call last):
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 1323, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/maca/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+countries_extreme_drought = list_countries_with_extreme_droughts(2023, 12, first_x=20)
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mAttributeError[39m                            Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m countries_extreme_drought = [43mlist_countries_with_extreme_droughts[49m[43m([49m[32;43m2023[39;49m[43m,[49m[43m [49m[32;43m12[39;49m[43m,[49m[43m [49m[43mfirst_x[49m[43m=[49m[32;43m20[39;49m[43m)[49m
+
+[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 5[39m, in [36mlist_countries_with_extreme_droughts[39m[34m(target_year, target_month, first_x, index)[39m
+[32m      2[39m spei_data = drought_dataset[index].sel(time=[33mf[39m[33m'[39m[38;5;132;01m{[39;00mtarget_year[38;5;132;01m}[39;00m[33m-[39m[38;5;132;01m{[39;00mtarget_month[38;5;132;01m:[39;00m[33m2d[39m[38;5;132;01m}[39;00m[33m'[39m, method=[33m'[39m[33mnearest[39m[33m'[39m).squeeze()
+[32m      3[39m classified_spei = xr.apply_ufunc(classify_drought, spei_data, vectorize=[38;5;28;01mTrue[39;00m, dask=[33m'[39m[33mparallelized[39m[33m'[39m)
+[32m----> [39m[32m5[39m world = gpd.read_file([43mgpd[49m[43m.[49m[43mdatasets[49m[43m.[49m[43mget_path[49m[43m([49m[33;43m'[39;49m[33;43mnaturalearth_lowres[39;49m[33;43m'[39;49m[43m)[49m)
+[32m      6[39m world = world.to_crs(epsg=[32m4326[39m)
+[32m      8[39m lats = classified_spei[[33m'[39m[33mlat[39m[33m'[39m].values
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/geopandas/datasets/__init__.py:18[39m, in [36mget_path[39m[34m(dataset)[39m
+[32m     12[39m error_msg = (
+[32m     13[39m     [33m"[39m[33mThe geopandas.dataset has been deprecated and was removed in GeoPandas [39m[33m"[39m
+[32m     14[39m     [33mf[39m[33m"[39m[33m1.0. You can get the original [39m[33m'[39m[38;5;132;01m{[39;00mdataset[38;5;132;01m}[39;00m[33m'[39m[33m data from [39m[33m"[39m
+[32m     15[39m     [33mf[39m[33m"[39m[38;5;132;01m{[39;00mne_message[38;5;250m [39m[38;5;28;01mif[39;00m[38;5;250m [39m[33m'[39m[33mnatural[39m[33m'[39m[38;5;250m [39m[38;5;129;01min[39;00m[38;5;250m [39mdataset[38;5;250m [39m[38;5;28;01melse[39;00m[38;5;250m [39mnybb_message[38;5;132;01m}[39;00m[33m"[39m
+[32m     16[39m )
+[32m     17[39m [38;5;28;01mif[39;00m dataset [38;5;129;01min[39;00m _prev_available:
+[32m---> [39m[32m18[39m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(error_msg)
+[32m     19[39m [38;5;28;01melse[39;00m:
+[32m     20[39m     error_msg = (
+[32m     21[39m         [33m"[39m[33mThe geopandas.dataset has been deprecated and [39m[33m"[39m
+[32m     22[39m         [33m"[39m[33mwas removed in GeoPandas 1.0. New sample datasets are now available [39m[33m"[39m
+[32m     23[39m         [33m"[39m[33min the geodatasets package (https://geodatasets.readthedocs.io/en/latest/)[39m[33m"[39m
+[32m     24[39m     )
+
+[31mAttributeError[39m: The geopandas.dataset has been deprecated and was removed in GeoPandas 1.0. You can get the original 'naturalearth_lowres' data from https://www.naturalearthdata.com/downloads/110m-cultural-vectors/.
+

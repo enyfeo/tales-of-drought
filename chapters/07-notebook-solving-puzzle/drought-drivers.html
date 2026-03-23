@@ -16,42 +16,45 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-  
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=ee12de98" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Find and analyse drought events" href="../06-notebook-quantum-of-drought/notebook-quantum-of-drought.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -81,19 +85,8 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -101,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,8 +101,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -126,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -156,21 +149,17 @@
     
     
     <img src="../../_static/logo-no-bg.png" class="logo__image only-light" alt="Tales of Dry Lands - Home"/>
-    <script>document.write(`<img src="../../_static/logo-no-bg.png" class="logo__image only-dark" alt="Tales of Dry Lands - Home"/>`);</script>
+    <img src="../../_static/logo-no-bg.png" class="logo__image only-dark pst-js-only" alt="Tales of Dry Lands - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -205,7 +194,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-time-machine.html">The Time Machine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-focus-madagascar.html">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -230,9 +218,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -276,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook" target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -293,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/handbook/issues/new?title=Issue%20on%20page%20%2Fchapters/07-notebook-solving-puzzle/drought-drivers.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ECMWFCode4Earth/tales-of-drought/issues/new?title=Issue%20on%20page%20%2Fchapters/07-notebook-solving-puzzle/drought-drivers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +355,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -376,25 +369,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -442,9 +427,20 @@ document.write(`
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cdsapi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">cdsapi</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://cds-beta.climate.copernicus.eu/api&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="s1">&#39;6db1903d-4754-4084-a35e-fd1d44e2f457&#39;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://cds.climate.copernicus.eu/api&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">cdsapi</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">client</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://cds.climate.copernicus.eu/api&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;cdsapi&#39;
 </pre></div>
 </div>
 </div>
@@ -476,7 +472,7 @@ document.write(`
 </section>
 <section id="era5-land-monthly-averaged-data-from-1950-to-present">
 <h1>ERA5-Land monthly averaged data from 1950 to present<a class="headerlink" href="#era5-land-monthly-averaged-data-from-1950-to-present" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview">https://cds-beta.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview</a></p>
+<p><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview">https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=overview</a></p>
 <section id="focus-in-madagascar">
 <h2>Focus in Madagascar<a class="headerlink" href="#focus-in-madagascar" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">'area':</span> <span class="pre">[-9.95,</span> <span class="pre">40.23,</span> <span class="pre">-26.8,</span> <span class="pre">52.45]</span></code></p>
@@ -505,73 +501,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-15 09:55:16,817 INFO Request ID is 84ca07d4-9e86-4b3c-95f5-7f50fef1dcda
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-09 08:00:12,764 INFO Request ID is d5888c44-909a-4a9a-a545-44f367af60d0
+2024-09-09 08:00:12,785 INFO status has been updated to accepted
+2024-09-09 08:00:44,066 INFO status has been updated to running
+2024-09-09 08:22:30,670 WARNING Structural differences in grib fields detected, safely opening as a list of datasets. This may result in multiple files being created.
+2024-09-09 08:22:30,672 INFO Creating download object as zip with files:
+[&#39;data_0.nc&#39;, &#39;data_1.nc&#39;, &#39;data_2.nc&#39;, &#39;data_3.nc&#39;]
+2024-09-09 08:22:30,672 INFO status has been updated to successful
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-15 09:55:16,848 INFO status has been updated to accepted
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-09-15 09:55:18,364 INFO status has been updated to running
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">19</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;product_type&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;monthly_averaged_reanalysis&#39;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;variable&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2m_temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;skin_temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;soil_temperature_level_1&#39;</span><span class="p">,</span> <span class="s1">&#39;soil_temperature_level_2&#39;</span><span class="p">,</span> <span class="s1">&#39;soil_temperature_level_3&#39;</span><span class="p">,</span> <span class="s1">&#39;soil_temperature_level_4&#39;</span><span class="p">,</span> 
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span>     <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mf">9.95</span><span class="p">,</span> <span class="mf">40.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">26.8</span><span class="p">,</span> <span class="mf">52.45</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1"># client.retrieve(dataset, request, &#39;era5-land-monthly-means-madagascar-2018-2024.nc&#39;)</span>
-<span class="ne">---&gt; </span><span class="mi">19</span> <span class="n">client</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
-
-<span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cads_api_client/legacy_api_client.py:149,</span> in <span class="ni">LegacyApiClient.retrieve</span><span class="nt">(self, name, request, target)</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="k">def</span> <span class="nf">retrieve</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">148</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">processing</span><span class="o">.</span><span class="n">Results</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">149</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logging_decorator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">submit_and_wait_on_result</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="n">collection_id</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">151</span>         <span class="n">retry_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">retry_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">152</span>         <span class="o">**</span><span class="n">request</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="n">partial_download</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">result</span><span class="o">.</span><span class="n">download</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">156</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">157</span>         <span class="n">retry_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">retry_options</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="n">result</span><span class="o">.</span><span class="n">download</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">logging_decorator</span><span class="p">(</span><span class="n">partial_download</span><span class="p">)</span>  <span class="c1"># type: ignore[method-assign]</span>
-
-<span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cads_api_client/legacy_api_client.py:134,</span> in <span class="ni">LegacyApiClient.logging_decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">with</span> <span class="n">LoggingContext</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span>         <span class="n">logger</span><span class="o">=</span><span class="n">processing</span><span class="o">.</span><span class="n">logger</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_debug</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">134</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cads_api_client/api_client.py:77,</span> in <span class="ni">ApiClient.submit_and_wait_on_result</span><span class="nt">(self, collection_id, retry_options, **request)</span>
-<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">def</span> <span class="nf">submit_and_wait_on_result</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">collection_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">retry_options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">request</span><span class="p">:</span> <span class="n">Any</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">processing</span><span class="o">.</span><span class="n">Results</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">77</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retrieve_api</span><span class="o">.</span><span class="n">submit_and_wait_on_result</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">collection_id</span><span class="p">,</span> <span class="n">retry_options</span><span class="o">=</span><span class="n">retry_options</span><span class="p">,</span> <span class="o">**</span><span class="n">request</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="p">)</span>
-
-<span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cads_api_client/processing.py:454,</span> in <span class="ni">Processing.submit_and_wait_on_result</span><span class="nt">(self, collection_id, retry_options, **request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">450</span> <span class="k">def</span> <span class="nf">submit_and_wait_on_result</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">451</span>     <span class="bp">self</span><span class="p">,</span> <span class="n">collection_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">retry_options</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">**</span><span class="n">request</span><span class="p">:</span> <span class="n">Any</span>
-<span class="g g-Whitespace">    </span><span class="mi">452</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Results</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">453</span>     <span class="n">remote</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">collection_id</span><span class="p">,</span> <span class="n">retry_options</span><span class="o">=</span><span class="n">retry_options</span><span class="p">,</span> <span class="o">**</span><span class="n">request</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">454</span>     <span class="n">remote</span><span class="o">.</span><span class="n">wait_on_result</span><span class="p">(</span><span class="n">retry_options</span><span class="o">=</span><span class="n">retry_options</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">455</span>     <span class="k">return</span> <span class="n">remote</span><span class="o">.</span><span class="n">make_results</span><span class="p">()</span>
-
-<span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cads_api_client/processing.py:248,</span> in <span class="ni">Remote.wait_on_result</span><span class="nt">(self, retry_options)</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="k">raise</span> <span class="n">ProcessingFailedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown API state </span><span class="si">{</span><span class="n">status</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;result not ready, waiting for </span><span class="si">{</span><span class="n">sleep</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">248</span> <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sleep</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;da49a9872b4d4b3977bccb19db6e50c7.zip&#39;
 </pre></div>
 </div>
 </div>
@@ -594,14 +533,14 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-<span class="kn">import</span> <span class="nn">glob</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">dask</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">dask</span>
 </pre></div>
 </div>
 </div>
@@ -5014,7 +4953,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">visualise_variable_annually</span><span class="p">(</span><span class="n">variable_name</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualise_variable_annually</span><span class="p">(</span><span class="n">variable_name</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
     
     <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()})</span>
     <span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;January&quot;</span><span class="p">,</span> <span class="s2">&quot;February&quot;</span><span class="p">,</span> <span class="s2">&quot;March&quot;</span><span class="p">,</span> <span class="s2">&quot;April&quot;</span><span class="p">,</span> <span class="s2">&quot;May&quot;</span><span class="p">,</span> <span class="s2">&quot;June&quot;</span><span class="p">,</span><span class="s2">&quot;July&quot;</span><span class="p">,</span> <span class="s2">&quot;August&quot;</span><span class="p">,</span> <span class="s2">&quot;September&quot;</span><span class="p">,</span> <span class="s2">&quot;October&quot;</span><span class="p">,</span> <span class="s2">&quot;November&quot;</span><span class="p">,</span> <span class="s2">&quot;December&quot;</span><span class="p">]</span>
@@ -5045,7 +4984,7 @@ Attributes:
 <h1>Compare to baseline (1991 to 2023)<a class="headerlink" href="#compare-to-baseline-1991-to-2023" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_monthly_baseline</span><span class="p">(</span><span class="n">ds_monthly</span><span class="p">,</span> <span class="n">ignore_years</span><span class="o">=</span><span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_monthly_baseline</span><span class="p">(</span><span class="n">ds_monthly</span><span class="p">,</span> <span class="n">ignore_years</span><span class="o">=</span><span class="p">[</span><span class="mi">2020</span><span class="p">]):</span>
     <span class="n">ds_baseline</span> <span class="o">=</span> <span class="n">ds_monthly</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">valid_time</span><span class="o">=~</span><span class="n">ds_monthly</span><span class="p">[</span><span class="s1">&#39;valid_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">ignore_years</span><span class="p">))</span>
     <span class="n">monthly_baseline</span> <span class="o">=</span> <span class="n">ds_baseline</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;valid_time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;valid_time&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">monthly_baseline</span>
@@ -5055,7 +4994,7 @@ Attributes:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_comparisons</span><span class="p">(</span><span class="n">ds_annual</span><span class="p">,</span> <span class="n">ds_monthly_baseline</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">show_diff_plots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_box_plots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_hists</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_extremes_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">extreme_perc</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_comparisons</span><span class="p">(</span><span class="n">ds_annual</span><span class="p">,</span> <span class="n">ds_monthly_baseline</span><span class="p">,</span> <span class="n">variable_name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">show_diff_plots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_box_plots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_hists</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">show_extremes_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">extreme_perc</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">ds_annual_variable</span> <span class="o">=</span> <span class="n">ds_annual</span><span class="p">[</span><span class="n">plot_params</span><span class="p">[</span><span class="n">variable_name</span><span class="p">][</span><span class="s2">&quot;short_name&quot;</span><span class="p">]]</span>
     <span class="n">ds_monthly_variable</span> <span class="o">=</span> <span class="n">ds_annual_variable</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;valid_time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;valid_time&#39;</span><span class="p">)</span>
 
@@ -5238,7 +5177,7 @@ Processing month December
 </div>
 <section id="temperature-and-precipitation-gridded-data-for-global-and-regional-domains-derived-from-in-situ-and-satellite-observations">
 <h2>Temperature and precipitation gridded data for global and regional domains derived from in-situ and satellite observations<a class="headerlink" href="#temperature-and-precipitation-gridded-data-for-global-and-regional-domains-derived-from-in-situ-and-satellite-observations" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://cds-beta.climate.copernicus.eu/datasets/insitu-gridded-observations-global-and-regional?tab=download">https://cds-beta.climate.copernicus.eu/datasets/insitu-gridded-observations-global-and-regional?tab=download</a></p>
+<p><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-global-and-regional?tab=download">https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-global-and-regional?tab=download</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s2">&quot;insitu-gridded-observations-global-and-regional&quot;</span>
@@ -5272,7 +5211,7 @@ Processing month December
 <span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">client</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
 
 <span class="nn">File ~/drought-311-venv/lib64/python3.11/site-packages/cdsapi/api.py:281,</span> in <span class="ni">Client.__new__</span><span class="nt">(cls, url, key, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">def</span><span class="w"> </span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">281</span>     <span class="n">_</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_url_key_verify</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="k">if</span> <span class="s2">&quot;:&quot;</span> <span class="ow">in</span> <span class="n">token</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">283</span>         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
@@ -5311,7 +5250,7 @@ Processing month December
 </section>
 <section id="river-discharge-and-related-historical-data-from-the-global-flood-awareness-system">
 <h2>River discharge and related historical data from the Global Flood Awareness System<a class="headerlink" href="#river-discharge-and-related-historical-data-from-the-global-flood-awareness-system" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://cds-beta.climate.copernicus.eu/datasets/cems-glofas-historical?tab=download">https://cds-beta.climate.copernicus.eu/datasets/cems-glofas-historical?tab=download</a></p>
+<p><a class="reference external" href="https://cds.climate.copernicus.eu/datasets/cems-glofas-historical?tab=download">https://cds.climate.copernicus.eu/datasets/cems-glofas-historical?tab=download</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s2">&quot;cems-glofas-historical&quot;</span>
@@ -5392,14 +5331,16 @@ Processing month December
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Access Temperature variable from ADS/CDS</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#access-relative-humidity">Access relative humidity</a></li>
@@ -5454,8 +5395,8 @@ By George Begkas, Marina Caporlingua, Lucy Colley, Akis Karagiannis - Thanks to 
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
