@@ -194,6 +194,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-time-machine.html">The Time Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05-notebook-time-machine/notebook-focus-madagascar.html">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -620,24 +621,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">output_file</span><span class="p">,</span> <span class="n">missing_file</span> <span class="o">=</span> <span class="n">create_country_list_json</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data has been successfully saved to </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing countries have been saved to </span><span class="si">{</span><span class="n">missing_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">Cell In[4], line 101,</span> in <span class="ni">create_country_list_json</span><span class="nt">(directory_path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">100</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_country_list_json</span><span class="p">(</span><span class="n">directory_path</span><span class="o">=</span><span class="s1">&#39;country-geojson&#39;</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">101</span>     <span class="n">geojson_files</span> <span class="o">=</span> <span class="n">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span> <span class="o">=</span> <span class="n">separate_files_by_adm_level</span><span class="p">(</span><span class="n">geojson_files</span><span class="p">,</span> <span class="n">directory_path</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">country_list</span><span class="p">,</span> <span class="n">initial_missing_countries</span> <span class="o">=</span> <span class="n">process_countries</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">adm1_subareas</span><span class="p">,</span> <span class="n">adm2_subareas</span><span class="p">)</span>
-
-<span class="nn">Cell In[4], line 2,</span> in <span class="ni">list_geojson_files</span><span class="nt">(directory_path)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">list_geojson_files</span><span class="p">(</span><span class="n">directory_path</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory_path</span><span class="p">)</span> <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.geojson&#39;</span><span class="p">)]</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;country-geojson&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of countries: 230
+Number of missing entries: 0
+Data has been successfully saved to country_list.json
+Missing countries have been saved to missing_countries.json
 </pre></div>
 </div>
 </div>

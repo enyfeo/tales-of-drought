@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Find and analyse drought events" href="../06-notebook-quantum-of-drought/notebook-quantum-of-drought.html" />
-    <link rel="prev" title="The Time Machine, identify drought events" href="notebook-time-machine.html" />
+    <link rel="prev" title="Mapping current global drought events" href="notebook-mapping-current-global-drought-events.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -194,6 +194,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebook-time-machine.html">The Time Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -550,31 +551,6 @@
 
 <span class="n">spei1_significance_madagascar</span> <span class="o">=</span> <span class="n">mask_invalid_values</span><span class="p">(</span><span class="n">subset_madagascar</span><span class="p">(</span><span class="n">spei1_significance</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">),</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
 <span class="n">spi1_significance_madagascar</span> <span class="o">=</span> <span class="n">mask_invalid_values</span><span class="p">(</span><span class="n">subset_madagascar</span><span class="p">(</span><span class="n">spi1_significance</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">),</span> <span class="n">variable</span><span class="o">=</span><span class="s1">&#39;significance&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spi1</span> <span class="o">=</span> <span class="n">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">spi12</span> <span class="o">=</span> <span class="n">get_spi_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">spei1</span> <span class="o">=</span> <span class="n">get_spei_dataset</span><span class="p">(</span><span class="n">acc_period</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">years</span><span class="o">=</span><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2020</span><span class="p">])</span>
-
-<span class="nn">Cell In[2], line 10,</span> in <span class="ni">get_spi_dataset</span><span class="nt">(acc_period, years)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">spi_paths</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data_root_folder</span><span class="si">}</span><span class="s1">spi</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">/SPI</span><span class="si">{</span><span class="n">acc_period</span><span class="si">}</span><span class="s1">_gamma_global_era5_moda_ref1991to2020_</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s1">*.nc&#39;</span><span class="p">)))</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="k">return</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">spi_paths</span><span class="p">,</span> <span class="n">chunks</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s2">&quot;auto&quot;</span><span class="p">},</span> <span class="n">concat_dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="nn">File ~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/xarray/backends/api.py:1591,</span> in <span class="ni">open_mfdataset</span><span class="nt">(paths, chunks, concat_dim, compat, preprocess, engine, data_vars, coords, combine, parallel, join, attrs_file, combine_attrs, errors, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1588</span> <span class="n">paths</span> <span class="o">=</span> <span class="n">_find_absolute_paths</span><span class="p">(</span><span class="n">paths</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1590</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">paths</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1591</span>     <span class="k">raise</span> <span class="ne">OSError</span><span class="p">(</span><span class="s2">&quot;no files to open&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1593</span> <span class="n">paths1d</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span> <span class="o">|</span> <span class="n">ReadBuffer</span><span class="p">]</span>
-<span class="g g-Whitespace">   </span><span class="mi">1594</span> <span class="k">if</span> <span class="n">combine</span> <span class="o">==</span> <span class="s2">&quot;nested&quot;</span><span class="p">:</span>
-
-<span class="ne">OSError</span>: no files to open
 </pre></div>
 </div>
 </div>
@@ -1710,12 +1686,12 @@ Attributes:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebook-time-machine.html"
+       href="notebook-mapping-current-global-drought-events.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">The Time Machine, identify drought events</p>
+        <p class="prev-next-title">Mapping current global drought events</p>
       </div>
     </a>
     <a class="right-next"

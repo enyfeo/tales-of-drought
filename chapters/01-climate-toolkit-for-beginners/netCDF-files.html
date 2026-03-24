@@ -194,6 +194,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">First exploration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-time-machine.html">The Time Machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-mapping-current-global-drought-events.html">Mapping current global drought events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-notebook-time-machine/notebook-focus-madagascar.html">Focus on Madagascar</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Second exploration</span></p>
@@ -491,87 +492,39 @@ It has 2 fundamental data structures:</p>
 </symbol>
 </defs>
 </svg>
-<style>/* CSS stylesheet for displaying xarray objects in notebooks */
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
 
 :root {
-  --xr-font-color0: var(
-    --jp-content-font-color0,
-    var(--pst-color-text-base rgba(0, 0, 0, 1))
-  );
-  --xr-font-color2: var(
-    --jp-content-font-color2,
-    var(--pst-color-text-base, rgba(0, 0, 0, 0.54))
-  );
-  --xr-font-color3: var(
-    --jp-content-font-color3,
-    var(--pst-color-text-base, rgba(0, 0, 0, 0.38))
-  );
-  --xr-border-color: var(
-    --jp-border-color2,
-    hsl(from var(--pst-color-on-background, white) h s calc(l - 10))
-  );
-  --xr-disabled-color: var(
-    --jp-layout-color3,
-    hsl(from var(--pst-color-on-background, white) h s calc(l - 40))
-  );
-  --xr-background-color: var(
-    --jp-layout-color0,
-    var(--pst-color-on-background, white)
-  );
-  --xr-background-color-row-even: var(
-    --jp-layout-color1,
-    hsl(from var(--pst-color-on-background, white) h s calc(l - 5))
-  );
-  --xr-background-color-row-odd: var(
-    --jp-layout-color2,
-    hsl(from var(--pst-color-on-background, white) h s calc(l - 15))
-  );
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
 }
 
-html[theme="dark"],
-html[data-theme="dark"],
-body[data-theme="dark"],
+html[theme=dark],
+html[data-theme=dark],
+body[data-theme=dark],
 body.vscode-dark {
-  --xr-font-color0: var(
-    --jp-content-font-color0,
-    var(--pst-color-text-base, rgba(255, 255, 255, 1))
-  );
-  --xr-font-color2: var(
-    --jp-content-font-color2,
-    var(--pst-color-text-base, rgba(255, 255, 255, 0.54))
-  );
-  --xr-font-color3: var(
-    --jp-content-font-color3,
-    var(--pst-color-text-base, rgba(255, 255, 255, 0.38))
-  );
-  --xr-border-color: var(
-    --jp-border-color2,
-    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 10))
-  );
-  --xr-disabled-color: var(
-    --jp-layout-color3,
-    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 40))
-  );
-  --xr-background-color: var(
-    --jp-layout-color0,
-    var(--pst-color-on-background, #111111)
-  );
-  --xr-background-color-row-even: var(
-    --jp-layout-color1,
-    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 5))
-  );
-  --xr-background-color-row-odd: var(
-    --jp-layout-color2,
-    hsl(from var(--pst-color-on-background, #111111) h s calc(l + 15))
-  );
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
 }
 
 .xr-wrap {
   display: block !important;
   min-width: 300px;
   max-width: 700px;
-  line-height: 1.6;
-  padding-bottom: 4px;
 }
 
 .xr-text-repr-fallback {
@@ -582,11 +535,8 @@ body.vscode-dark {
 .xr-header {
   padding-top: 6px;
   padding-bottom: 6px;
-}
-
-.xr-header {
-  border-bottom: solid 1px var(--xr-border-color);
   margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
 }
 
 .xr-header > div,
@@ -597,62 +547,39 @@ body.vscode-dark {
 }
 
 .xr-obj-type,
-.xr-obj-name {
+.xr-array-name {
   margin-left: 2px;
   margin-right: 10px;
 }
 
-.xr-obj-type,
-.xr-group-box-contents > label {
+.xr-obj-type {
   color: var(--xr-font-color2);
-  display: block;
 }
 
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
-  margin-block-start: 0;
-  margin-block-end: 0;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
 }
 
 .xr-section-item {
   display: contents;
 }
 
-.xr-section-item > input,
-.xr-group-box-contents > input,
-.xr-array-wrap > input {
-  display: block;
-  opacity: 0;
-  height: 0;
-  margin: 0;
+.xr-section-item input {
+  display: none;
 }
 
-.xr-section-item > input + label,
-.xr-var-item > input + label {
+.xr-section-item input + label {
   color: var(--xr-disabled-color);
 }
 
-.xr-section-item > input:enabled + label,
-.xr-var-item > input:enabled + label,
-.xr-array-wrap > input:enabled + label,
-.xr-group-box-contents > input:enabled + label {
+.xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
 }
 
-.xr-section-item > input:focus-visible + label,
-.xr-var-item > input:focus-visible + label,
-.xr-array-wrap > input:focus-visible + label,
-.xr-group-box-contents > input:focus-visible + label {
-  outline: auto;
-}
-
-.xr-section-item > input:enabled + label:hover,
-.xr-var-item > input:enabled + label:hover,
-.xr-array-wrap > input:enabled + label:hover,
-.xr-group-box-contents > input:enabled + label:hover {
+.xr-section-item input:enabled + label:hover {
   color: var(--xr-font-color0);
 }
 
@@ -660,25 +587,11 @@ body.vscode-dark {
   grid-column: 1;
   color: var(--xr-font-color2);
   font-weight: 500;
-  white-space: nowrap;
-}
-
-.xr-section-summary > em {
-  font-weight: normal;
-}
-
-.xr-span-grid {
-  grid-column-end: -1;
 }
 
 .xr-section-summary > span {
   display: inline-block;
-  padding-left: 0.3em;
-}
-
-.xr-group-box-contents > input:checked + label > span {
-  display: inline-block;
-  padding-left: 0.6em;
+  padding-left: 0.5em;
 }
 
 .xr-section-summary-in:disabled + label {
@@ -687,7 +600,7 @@ body.vscode-dark {
 
 .xr-section-summary-in + label:before {
   display: inline-block;
-  content: "►";
+  content: '►';
   font-size: 11px;
   width: 15px;
   text-align: center;
@@ -698,7 +611,7 @@ body.vscode-dark {
 }
 
 .xr-section-summary-in:checked + label:before {
-  content: "▼";
+  content: '▼';
 }
 
 .xr-section-summary-in:checked + label > span {
@@ -706,9 +619,9 @@ body.vscode-dark {
 }
 
 .xr-section-summary,
-.xr-section-inline-details,
-.xr-group-box-contents > label {
+.xr-section-inline-details {
   padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 .xr-section-inline-details {
@@ -716,79 +629,13 @@ body.vscode-dark {
 }
 
 .xr-section-details {
-  grid-column: 1 / -1;
-  margin-top: 4px;
-  margin-bottom: 5px;
-}
-
-.xr-section-summary-in ~ .xr-section-details {
   display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
 }
 
 .xr-section-summary-in:checked ~ .xr-section-details {
   display: contents;
-}
-
-.xr-children {
-  display: inline-grid;
-  grid-template-columns: 100%;
-  grid-column: 1 / -1;
-  padding-top: 4px;
-}
-
-.xr-group-box {
-  display: inline-grid;
-  grid-template-columns: 0px 30px auto;
-}
-
-.xr-group-box-vline {
-  grid-column-start: 1;
-  border-right: 0.2em solid;
-  border-color: var(--xr-border-color);
-  width: 0px;
-}
-
-.xr-group-box-hline {
-  grid-column-start: 2;
-  grid-row-start: 1;
-  height: 1em;
-  width: 26px;
-  border-bottom: 0.2em solid;
-  border-color: var(--xr-border-color);
-}
-
-.xr-group-box-contents {
-  grid-column-start: 3;
-  padding-bottom: 4px;
-}
-
-.xr-group-box-contents > label::before {
-  content: "📂";
-  padding-right: 0.3em;
-}
-
-.xr-group-box-contents > input:checked + label::before {
-  content: "📁";
-}
-
-.xr-group-box-contents > input:checked + label {
-  padding-bottom: 0px;
-}
-
-.xr-group-box-contents > input:checked ~ .xr-sections {
-  display: none;
-}
-
-.xr-group-box-contents > input + label > span {
-  display: none;
-}
-
-.xr-group-box-ellipsis {
-  font-size: 1.4em;
-  font-weight: 900;
-  color: var(--xr-font-color2);
-  letter-spacing: 0.15em;
-  cursor: default;
 }
 
 .xr-array-wrap {
@@ -836,15 +683,15 @@ body.vscode-dark {
 }
 
 .xr-dim-list:before {
-  content: "(";
+  content: '(';
 }
 
 .xr-dim-list:after {
-  content: ")";
+  content: ')';
 }
 
 .xr-dim-list li:not(:last-child):after {
-  content: ",";
+  content: ',';
   padding-right: 5px;
 }
 
@@ -861,9 +708,7 @@ body.vscode-dark {
 .xr-var-item label,
 .xr-var-item > .xr-var-name span {
   background-color: var(--xr-background-color-row-even);
-  border-color: var(--xr-background-color-row-odd);
   margin-bottom: 0;
-  padding-top: 2px;
 }
 
 .xr-var-item > .xr-var-name:hover span {
@@ -874,7 +719,6 @@ body.vscode-dark {
 .xr-var-list > li:nth-child(odd) > label,
 .xr-var-list > li:nth-child(odd) > .xr-var-name span {
   background-color: var(--xr-background-color-row-odd);
-  border-color: var(--xr-background-color-row-even);
 }
 
 .xr-var-name {
@@ -924,15 +768,8 @@ body.vscode-dark {
 .xr-var-data,
 .xr-index-data {
   display: none;
-  border-top: 2px dotted var(--xr-background-color);
-  padding-bottom: 20px !important;
-  padding-top: 10px !important;
-}
-
-.xr-var-attrs-in + label,
-.xr-var-data-in + label,
-.xr-index-data-in + label {
-  padding: 0 1px;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
@@ -943,12 +780,6 @@ body.vscode-dark {
 
 .xr-var-data > table {
   float: right;
-}
-
-.xr-var-data > pre,
-.xr-index-data > pre,
-.xr-var-data > table > tbody > tr {
-  background-color: transparent !important;
 }
 
 .xr-var-name span,
@@ -1010,14 +841,6 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-
-.xr-var-attrs-in:checked + label > .xr-icon-file-text2,
-.xr-var-data-in:checked + label > .xr-icon-database,
-.xr-index-data-in:checked + label > .xr-icon-database {
-  color: var(--xr-font-color0);
-  filter: drop-shadow(1px 1px 5px var(--xr-font-color2));
-  stroke-width: 0.8px;
-}
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 8MB
 Dimensions:  (time: 1, lat: 721, lon: 1440)
 Coordinates:
@@ -1026,21 +849,22 @@ Coordinates:
   * lon      (lon) float64 12kB -180.0 -179.8 -179.5 ... 179.2 179.5 179.8
 Data variables:
     SPI12    (time, lat, lon) float64 8MB ...
-Attributes: (12/17)
-    title:                   SPI12
-    description:             Drought Index: Standardized Drought Index calcul...
-    Conventions:             CF-1.8
-    history:                 Created 30/10/2024 07:50:12 using DRYFALL.
-    institution:             European Centre for Medium-Range Weather Forecasts
-    source:                  DRYFALL v1.0
-    ...                      ...
-    climate_start_date:      1991-01-01
-    climate_end_date:        2020-12-31
-    frequency:               Monthly
-    contact_person:          support@ecmwf.int
-    ref_publication:         Keune, J., Di Giuseppe, F., Barnard, C., Damasio...
-    cds_data_catalogue_url:  https://cds.climate.copernicus.eu/datasets/deriv...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-43cf9c01-8d60-4601-a4f7-8b2a027904a3' class='xr-section-summary-in' type='checkbox' disabled /><label for='section-43cf9c01-8d60-4601-a4f7-8b2a027904a3' class='xr-section-summary'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1</li><li><span class='xr-has-index'>lat</span>: 721</li><li><span class='xr-has-index'>lon</span>: 1440</li></ul></div></li><li class='xr-section-item'><input id='section-0714fe41-30c5-4ba4-a459-5ea19da1f8b5' class='xr-section-summary-in' type='checkbox' checked /><label for='section-0714fe41-30c5-4ba4-a459-5ea19da1f8b5' class='xr-section-summary' title='Expand/collapse section'>Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2024-01-01T06:00:00</div><input id='attrs-1c7be156-3c79-4994-b26b-fa0805f99240' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1c7be156-3c79-4994-b26b-fa0805f99240' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-badf0e84-ef86-41d5-a401-f26ba4e414aa' class='xr-var-data-in' type='checkbox'><label for='data-badf0e84-ef86-41d5-a401-f26ba4e414aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2024-01-01T06:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>90.0 89.75 89.5 ... -89.75 -90.0</div><input id='attrs-e5138048-8b0b-417c-a352-c67426bd6f08' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e5138048-8b0b-417c-a352-c67426bd6f08' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3548c6f4-73df-48fe-b96f-50aa9514f41d' class='xr-var-data-in' type='checkbox'><label for='data-3548c6f4-73df-48fe-b96f-50aa9514f41d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([ 90.  ,  89.75,  89.5 , ..., -89.5 , -89.75, -90.  ], shape=(721,))</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-180.0 -179.8 ... 179.5 179.8</div><input id='attrs-b6a0b529-f475-461b-8c84-d7b4fb69d588' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b6a0b529-f475-461b-8c84-d7b4fb69d588' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0b6f5268-fe34-4bb4-93a8-b9a32e6f7a76' class='xr-var-data-in' type='checkbox'><label for='data-0b6f5268-fe34-4bb4-93a8-b9a32e6f7a76' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([-180.  , -179.75, -179.5 , ...,  179.25,  179.5 ,  179.75],
-      shape=(1440,))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ebc35af6-9fa1-4e1f-a068-613190246186' class='xr-section-summary-in' type='checkbox' checked /><label for='section-ebc35af6-9fa1-4e1f-a068-613190246186' class='xr-section-summary' title='Expand/collapse section'>Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>SPI12</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-904791f8-14c5-4fce-bc9f-70a5104d84f1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-904791f8-14c5-4fce-bc9f-70a5104d84f1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-81fbffd7-dc8a-41af-b517-ddbbfb2e8ff4' class='xr-var-data-in' type='checkbox'><label for='data-81fbffd7-dc8a-41af-b517-ddbbfb2e8ff4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Standardized Drought Index (SPI12)</dd></dl></div><div class='xr-var-data'><pre>[1038240 values with dtype=float64]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2417446f-b521-46ae-903e-062402fd857a' class='xr-section-summary-in' type='checkbox' /><label for='section-2417446f-b521-46ae-903e-062402fd857a' class='xr-section-summary' title='Expand/collapse section'>Attributes: <span>(17)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>SPI12</dd><dt><span>description :</span></dt><dd>Drought Index: Standardized Drought Index calculated according to the WMO guidelines (see https://library.wmo.int/doc_num.php?explnum_id=7768).</dd><dt><span>Conventions :</span></dt><dd>CF-1.8</dd><dt><span>history :</span></dt><dd>Created 30/10/2024 07:50:12 using DRYFALL.</dd><dt><span>institution :</span></dt><dd>European Centre for Medium-Range Weather Forecasts</dd><dt><span>source :</span></dt><dd>DRYFALL v1.0</dd><dt><span>license :</span></dt><dd>Creative Commons Attribution v4</dd><dt><span>citation_statement :</span></dt><dd>Drought indicators derived from ERA5 reanalysis</dd><dt><span>data_srs :</span></dt><dd>EPSG:4326</dd><dt><span>extent :</span></dt><dd>-180,-90,180,90</dd><dt><span>resolution :</span></dt><dd>0.25x0.25</dd><dt><span>climate_start_date :</span></dt><dd>1991-01-01</dd><dt><span>climate_end_date :</span></dt><dd>2020-12-31</dd><dt><span>frequency :</span></dt><dd>Monthly</dd><dt><span>contact_person :</span></dt><dd>support@ecmwf.int</dd><dt><span>ref_publication :</span></dt><dd>Keune, J., Di Giuseppe, F., Barnard, C., Damasio da Costa, E., and Wetterhall, F. (2025): ERA5–Drought: Global drought indices based on ECMWF reanalysis, Scientific Data 12, 616. https://doi.org/10.1038/s41597-025-04896-y</dd><dt><span>cds_data_catalogue_url :</span></dt><dd>https://cds.climate.copernicus.eu/datasets/derived-drought-historical-monthly</dd></dl></div></li></ul></div></div></div></div>
+Attributes:
+    title:        SPI12
+    description:  Drought Index: Standardized Drought Index calculated accord...
+    history:      Created 03/04/2024 21:04:18 using DRYFALL.
+    institution:  ECMWF
+    source:       DRYFALL v0.1</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-12f8b66b-d7b9-49ea-9ec5-5672436cdf6d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-12f8b66b-d7b9-49ea-9ec5-5672436cdf6d' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 1</li><li><span class='xr-has-index'>lat</span>: 721</li><li><span class='xr-has-index'>lon</span>: 1440</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-393c0015-0909-491e-a6e7-2720fc001adb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-393c0015-0909-491e-a6e7-2720fc001adb' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2024-01-01T06:00:00</div><input id='attrs-879f6078-d783-41b3-9d5a-c6fde9b7de15' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-879f6078-d783-41b3-9d5a-c6fde9b7de15' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-76d9e94d-38ad-42f2-812f-dfdae2466a86' class='xr-var-data-in' type='checkbox'><label for='data-76d9e94d-38ad-42f2-812f-dfdae2466a86' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2024-01-01T06:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>90.0 89.75 89.5 ... -89.75 -90.0</div><input id='attrs-05ab9380-f5b0-4baf-b44b-0f2653d3e563' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-05ab9380-f5b0-4baf-b44b-0f2653d3e563' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a7fa737-010d-4943-b2cc-4e9e4aea17a7' class='xr-var-data-in' type='checkbox'><label for='data-1a7fa737-010d-4943-b2cc-4e9e4aea17a7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([ 90.  ,  89.75,  89.5 , ..., -89.5 , -89.75, -90.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-180.0 -179.8 ... 179.5 179.8</div><input id='attrs-dc27d6b8-c26d-4d61-b9c4-b574806c2e98' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dc27d6b8-c26d-4d61-b9c4-b574806c2e98' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c0cf2066-fda4-4d5d-a35f-8c1f16696059' class='xr-var-data-in' type='checkbox'><label for='data-c0cf2066-fda4-4d5d-a35f-8c1f16696059' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([-180.  , -179.75, -179.5 , ...,  179.25,  179.5 ,  179.75])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ef4b4b35-1894-465c-9c5f-ccc7eb131fd4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ef4b4b35-1894-465c-9c5f-ccc7eb131fd4' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>SPI12</span></div><div class='xr-var-dims'>(time, lat, lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-468edd73-b75c-4871-9013-30b8489c28bf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-468edd73-b75c-4871-9013-30b8489c28bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fa180520-7978-44e6-b6bc-75b443bfe177' class='xr-var-data-in' type='checkbox'><label for='data-fa180520-7978-44e6-b6bc-75b443bfe177' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>-</dd><dt><span>long_name :</span></dt><dd>Standardized Drought Index (SPI12)</dd></dl></div><div class='xr-var-data'><pre>[1038240 values with dtype=float64]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ca6d4866-3472-45e0-8cb2-d42d5ac8a4ec' class='xr-section-summary-in' type='checkbox'  ><label for='section-ca6d4866-3472-45e0-8cb2-d42d5ac8a4ec' class='xr-section-summary' >Indexes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-69c650f7-460f-4b65-9559-c55864d8b6d4' class='xr-index-data-in' type='checkbox'/><label for='index-69c650f7-460f-4b65-9559-c55864d8b6d4' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2024-01-01 06:00:00&#x27;], dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, freq=None))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lat</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d09bdfee-e9d5-4b7b-a1d1-6ac003d5f76a' class='xr-index-data-in' type='checkbox'/><label for='index-d09bdfee-e9d5-4b7b-a1d1-6ac003d5f76a' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([  90.0,  89.75,   89.5,  89.25,   89.0,  88.75,   88.5,  88.25,   88.0,
+        87.75,
+       ...
+       -87.75,  -88.0, -88.25,  -88.5, -88.75,  -89.0, -89.25,  -89.5, -89.75,
+        -90.0],
+      dtype=&#x27;float64&#x27;, name=&#x27;lat&#x27;, length=721))</pre></div></li><li class='xr-var-item'><div class='xr-index-name'><div>lon</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-325e829f-d60e-4225-b2f3-bec59afa6628' class='xr-index-data-in' type='checkbox'/><label for='index-325e829f-d60e-4225-b2f3-bec59afa6628' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(Index([ -180.0, -179.75,  -179.5, -179.25,  -179.0, -178.75,  -178.5, -178.25,
+        -178.0, -177.75,
+       ...
+         177.5,  177.75,   178.0,  178.25,   178.5,  178.75,   179.0,  179.25,
+         179.5,  179.75],
+      dtype=&#x27;float64&#x27;, name=&#x27;lon&#x27;, length=1440))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-df6eabce-bc5d-453b-b2d9-9939dd3968d3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-df6eabce-bc5d-453b-b2d9-9939dd3968d3' class='xr-section-summary' >Attributes: <span>(5)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>SPI12</dd><dt><span>description :</span></dt><dd>Drought Index: Standardized Drought Index calculated according to the WMO guidelines (see https://library.wmo.int/doc_num.php?explnum_id=7768).</dd><dt><span>history :</span></dt><dd>Created 03/04/2024 21:04:18 using DRYFALL.</dd><dt><span>institution :</span></dt><dd>ECMWF</dd><dt><span>source :</span></dt><dd>DRYFALL v0.1</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>As we can see, the dataset has five key components:</p>
 <ul class="simple">
