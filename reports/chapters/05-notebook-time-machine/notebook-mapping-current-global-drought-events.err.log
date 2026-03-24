@@ -18,36 +18,209 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-countries_extreme_drought = list_countries_with_extreme_droughts(2023, 12, first_x=20)
+# Define the interactive controls
+
+# Load the world shapefile and extract the list of countries
+
+world = load_world_countries()
+
+country_list = world['name'].unique().tolist()
+
+country_list.sort()  # Sort the list alphabetically
+
+
+
+# Create widgets for interactive selection
+
+index_widget = widgets.Dropdown(
+
+    options=[('SPEI1', 'SPEI1'), ('SPEI3', 'SPEI3'), ('SPEI6', 'SPEI6'), ('SPEI12', 'SPEI12'), ('SPEI24', 'SPEI24'), ('SPEI48', 'SPEI48')],
+
+    value='SPEI12',
+
+    description='Index:',
+
+    disabled=False,
+
+)
+
+
+
+year_widget = widgets.IntSlider(
+
+    value=2023,
+
+    min=2000,
+
+    max=2023,
+
+    step=1,
+
+    description='Year:',
+
+    disabled=False,
+
+    continuous_update=False,
+
+    orientation='horizontal',
+
+)
+
+
+
+month_widget = widgets.IntSlider(
+
+    value=1,
+
+    min=1,
+
+    max=12,
+
+    step=1,
+
+    description='Month:',
+
+    disabled=False,
+
+    continuous_update=False,
+
+    orientation='horizontal',
+
+)
+
+
+
+country_widget = widgets.Dropdown(
+
+    options=country_list,
+
+    value='S. Sudan',  # Default value
+
+    description='Country:',
+
+    disabled=False,
+
+)
+
+
+
+# Create an interactive function that calls `show_country_drought_map`
+
+interactive_map = interact(
+
+    show_country_drought_map,
+
+    index=index_widget,
+
+    target_year=year_widget,
+
+    target_month=month_widget,
+
+    country_name=country_widget
+
+)
+
 ------------------
 
 
 [31m---------------------------------------------------------------------------[39m
-[31mAttributeError[39m                            Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m countries_extreme_drought = [43mlist_countries_with_extreme_droughts[49m[43m([49m[32;43m2023[39;49m[43m,[49m[43m [49m[32;43m12[39;49m[43m,[49m[43m [49m[43mfirst_x[49m[43m=[49m[32;43m20[39;49m[43m)[49m
+[31mStopIteration[39m                             Traceback (most recent call last)
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_selection.py:133[39m, in [36mfindvalue[39m[34m(array, value, compare)[39m
+[32m    132[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m133[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mnext[39;49m[43m([49m[43mx[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mx[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43marray[49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mcompare[49m[43m([49m[43mx[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m[43m)[49m
+[32m    134[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
 
-[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 5[39m, in [36mlist_countries_with_extreme_droughts[39m[34m(target_year, target_month, first_x, index)[39m
-[32m      2[39m spei_data = drought_dataset[index].sel(time=[33mf[39m[33m'[39m[38;5;132;01m{[39;00mtarget_year[38;5;132;01m}[39;00m[33m-[39m[38;5;132;01m{[39;00mtarget_month[38;5;132;01m:[39;00m[33m2d[39m[38;5;132;01m}[39;00m[33m'[39m, method=[33m'[39m[33mnearest[39m[33m'[39m).squeeze()
-[32m      3[39m classified_spei = xr.apply_ufunc(classify_drought, spei_data, vectorize=[38;5;28;01mTrue[39;00m, dask=[33m'[39m[33mparallelized[39m[33m'[39m)
-[32m----> [39m[32m5[39m world = gpd.read_file([43mgpd[49m[43m.[49m[43mdatasets[49m[43m.[49m[43mget_path[49m[43m([49m[33;43m'[39;49m[33;43mnaturalearth_lowres[39;49m[33;43m'[39;49m[43m)[49m)
-[32m      6[39m world = world.to_crs(epsg=[32m4326[39m)
-[32m      8[39m lats = classified_spei[[33m'[39m[33mlat[39m[33m'[39m].values
+[31mStopIteration[39m: 
 
-[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/geopandas/datasets/__init__.py:18[39m, in [36mget_path[39m[34m(dataset)[39m
-[32m     12[39m error_msg = (
-[32m     13[39m     [33m"[39m[33mThe geopandas.dataset has been deprecated and was removed in GeoPandas [39m[33m"[39m
-[32m     14[39m     [33mf[39m[33m"[39m[33m1.0. You can get the original [39m[33m'[39m[38;5;132;01m{[39;00mdataset[38;5;132;01m}[39;00m[33m'[39m[33m data from [39m[33m"[39m
-[32m     15[39m     [33mf[39m[33m"[39m[38;5;132;01m{[39;00mne_message[38;5;250m [39m[38;5;28;01mif[39;00m[38;5;250m [39m[33m'[39m[33mnatural[39m[33m'[39m[38;5;250m [39m[38;5;129;01min[39;00m[38;5;250m [39mdataset[38;5;250m [39m[38;5;28;01melse[39;00m[38;5;250m [39mnybb_message[38;5;132;01m}[39;00m[33m"[39m
-[32m     16[39m )
-[32m     17[39m [38;5;28;01mif[39;00m dataset [38;5;129;01min[39;00m _prev_available:
-[32m---> [39m[32m18[39m     [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m(error_msg)
-[32m     19[39m [38;5;28;01melse[39;00m:
-[32m     20[39m     error_msg = (
-[32m     21[39m         [33m"[39m[33mThe geopandas.dataset has been deprecated and [39m[33m"[39m
-[32m     22[39m         [33m"[39m[33mwas removed in GeoPandas 1.0. New sample datasets are now available [39m[33m"[39m
-[32m     23[39m         [33m"[39m[33min the geodatasets package (https://geodatasets.readthedocs.io/en/latest/)[39m[33m"[39m
-[32m     24[39m     )
+During handling of the above exception, another exception occurred:
 
-[31mAttributeError[39m: The geopandas.dataset has been deprecated and was removed in GeoPandas 1.0. You can get the original 'naturalearth_lowres' data from https://www.naturalearthdata.com/downloads/110m-cultural-vectors/.
+[31mValueError[39m                                Traceback (most recent call last)
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_selection.py:242[39m, in [36m_Selection._validate_value[39m[34m(self, proposal)[39m
+[32m    241[39m [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m242[39m     [38;5;28;01mreturn[39;00m [43mfindvalue[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43m_options_values[49m[43m,[49m[43m [49m[43mvalue[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m.[49m[43mequals[49m[43m)[49m [38;5;28;01mif[39;00m value [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m    243[39m [38;5;28;01mexcept[39;00m [38;5;167;01mValueError[39;00m:
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_selection.py:135[39m, in [36mfindvalue[39m[34m(array, value, compare)[39m
+[32m    134[39m [38;5;28;01mexcept[39;00m [38;5;167;01mStopIteration[39;00m:
+[32m--> [39m[32m135[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33m'[39m[38;5;132;01m%r[39;00m[33m not in array[39m[33m'[39m%value)
+
+[31mValueError[39m: 'S. Sudan' not in array
+
+During handling of the above exception, another exception occurred:
+
+[31mTraitError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[12][39m[32m, line 73[39m
+[32m     29[39m year_widget = widgets.IntSlider(
+[32m     30[39m 
+[32m     31[39m     value=[32m2023[39m,
+[32m   (...)[39m[32m     46[39m 
+[32m     47[39m )
+[32m     51[39m month_widget = widgets.IntSlider(
+[32m     52[39m 
+[32m     53[39m     value=[32m1[39m,
+[32m   (...)[39m[32m     68[39m 
+[32m     69[39m )
+[32m---> [39m[32m73[39m country_widget = [43mwidgets[49m[43m.[49m[43mDropdown[49m[43m([49m
+[32m     74[39m 
+[32m     75[39m [43m    [49m[43moptions[49m[43m=[49m[43mcountry_list[49m[43m,[49m
+[32m     76[39m 
+[32m     77[39m [43m    [49m[43mvalue[49m[43m=[49m[33;43m'[39;49m[33;43mS. Sudan[39;49m[33;43m'[39;49m[43m,[49m[43m  [49m[38;5;66;43;03m# Default value[39;49;00m
+[32m     78[39m 
+[32m     79[39m [43m    [49m[43mdescription[49m[43m=[49m[33;43m'[39;49m[33;43mCountry:[39;49m[33;43m'[39;49m[43m,[49m
+[32m     80[39m 
+[32m     81[39m [43m    [49m[43mdisabled[49m[43m=[49m[38;5;28;43;01mFalse[39;49;00m[43m,[49m
+[32m     82[39m 
+[32m     83[39m [43m)[49m
+[32m     87[39m [38;5;66;03m# Create an interactive function that calls `show_country_drought_map`[39;00m
+[32m     89[39m interactive_map = interact(
+[32m     90[39m 
+[32m     91[39m     show_country_drought_map,
+[32m   (...)[39m[32m    100[39m 
+[32m    101[39m )
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_selection.py:186[39m, in [36m_Selection.__init__[39m[34m(self, *args, **kwargs)[39m
+[32m    183[39m     kwargs[[33m'[39m[33mindex[39m[33m'[39m] = [32m0[39m [38;5;28;01mif[39;00m nonempty [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m    184[39m     kwargs[[33m'[39m[33mlabel[39m[33m'[39m], kwargs[[33m'[39m[33mvalue[39m[33m'[39m] = options[[32m0[39m] [38;5;28;01mif[39;00m nonempty [38;5;28;01melse[39;00m ([38;5;28;01mNone[39;00m, [38;5;28;01mNone[39;00m)
+[32m--> [39m[32m186[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    187[39m [38;5;28mself[39m._initializing_traits_ = [38;5;28;01mFalse[39;00m
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_description.py:35[39m, in [36mDescriptionWidget.__init__[39m[34m(self, *args, **kwargs)[39m
+[32m     33[39m     kwargs.setdefault([33m'[39m[33mtooltip[39m[33m'[39m, kwargs[[33m'[39m[33mdescription_tooltip[39m[33m'[39m])
+[32m     34[39m     [38;5;28;01mdel[39;00m kwargs[[33m'[39m[33mdescription_tooltip[39m[33m'[39m]
+[32m---> [39m[32m35[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget.py:503[39m, in [36mWidget.__init__[39m[34m(self, **kwargs)[39m
+[32m    501[39m [38;5;250m[39m[33;03m"""Public constructor"""[39;00m
+[32m    502[39m [38;5;28mself[39m._model_id = kwargs.pop([33m'[39m[33mmodel_id[39m[33m'[39m, [38;5;28;01mNone[39;00m)
+[32m--> [39m[32m503[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    505[39m Widget._call_widget_constructed([38;5;28mself[39m)
+[32m    506[39m [38;5;28mself[39m.open()
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/traitlets/traitlets.py:1369[39m, in [36mHasTraits.__init__[39m[34m(self, *args, **kwargs)[39m
+[32m   1367[39m changed = [38;5;28mset[39m(kwargs) & [38;5;28mset[39m([38;5;28mself[39m._traits)
+[32m   1368[39m [38;5;28;01mfor[39;00m key [38;5;129;01min[39;00m changed:
+[32m-> [39m[32m1369[39m     value = [38;5;28;43mself[39;49m[43m.[49m[43m_traits[49m[43m[[49m[43mkey[49m[43m][49m[43m.[49m[43m_cross_validate[49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mself[39;49m[43m,[49m[43m [49m[43mkey[49m[43m)[49m[43m)[49m
+[32m   1370[39m     [38;5;28mself[39m.set_trait(key, value)
+[32m   1371[39m     changes[key][[33m"[39m[33mnew[39m[33m"[39m] = value
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/traitlets/traitlets.py:730[39m, in [36mTraitType._cross_validate[39m[34m(self, obj, value)[39m
+[32m    728[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.name [38;5;129;01min[39;00m obj._trait_validators:
+[32m    729[39m     proposal = Bunch({[33m"[39m[33mtrait[39m[33m"[39m: [38;5;28mself[39m, [33m"[39m[33mvalue[39m[33m"[39m: value, [33m"[39m[33mowner[39m[33m"[39m: obj})
+[32m--> [39m[32m730[39m     value = [43mobj[49m[43m.[49m[43m_trait_validators[49m[43m[[49m[38;5;28;43mself[39;49m[43m.[49m[43mname[49m[43m][49m[43m([49m[43mobj[49m[43m,[49m[43m [49m[43mproposal[49m[43m)[49m
+[32m    731[39m [38;5;28;01melif[39;00m [38;5;28mhasattr[39m(obj, [33m"[39m[33m_[39m[38;5;132;01m%s[39;00m[33m_validate[39m[33m"[39m % [38;5;28mself[39m.name):
+[32m    732[39m     meth_name = [33m"[39m[33m_[39m[38;5;132;01m%s[39;00m[33m_validate[39m[33m"[39m % [38;5;28mself[39m.name
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/traitlets/traitlets.py:1241[39m, in [36mEventHandler.__call__[39m[34m(self, *args, **kwargs)[39m
+[32m   1239[39m [38;5;250m[39m[33;03m"""Pass `*args` and `**kwargs` to the handler's function if it exists."""[39;00m
+[32m   1240[39m [38;5;28;01mif[39;00m [38;5;28mhasattr[39m([38;5;28mself[39m, [33m"[39m[33mfunc[39m[33m"[39m):
+[32m-> [39m[32m1241[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mfunc[49m[43m([49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m   1242[39m [38;5;28;01melse[39;00m:
+[32m   1243[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._init_call(*args, **kwargs)
+
+[36mFile [39m[32m~/dev/tales-of-drought/tales-of-drought/lib/python3.12/site-packages/ipywidgets/widgets/widget_selection.py:244[39m, in [36m_Selection._validate_value[39m[34m(self, proposal)[39m
+[32m    242[39m     [38;5;28;01mreturn[39;00m findvalue([38;5;28mself[39m._options_values, value, [38;5;28mself[39m.equals) [38;5;28;01mif[39;00m value [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28;01mNone[39;00m
+[32m    243[39m [38;5;28;01mexcept[39;00m [38;5;167;01mValueError[39;00m:
+[32m--> [39m[32m244[39m     [38;5;28;01mraise[39;00m TraitError([33m'[39m[33mInvalid selection: value not found[39m[33m'[39m)
+
+[31mTraitError[39m: Invalid selection: value not found
 
